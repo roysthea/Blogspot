@@ -180,279 +180,262 @@
 
 <b:defaultmarkups>
 <b:defaultmarkup type='Common'>
-
-  <!-- =================================================== -->
-  <!-- 1. SYSTEM & CORE INCLUDABLES                        -->
-  <!-- =================================================== -->
-
-  <!-- Class Body Dinamis -->
-  <b:includable id='BodyClass'>
-    <b:eval expr='data:view.isHomepage ? &quot;is-home&quot; : data:view.isPost ? &quot;is-single&quot; : data:view.isPage ? &quot;is-page&quot; : data:view.isSearch ? &quot;is-search&quot; : &quot;is-archive&quot;'/>
-  </b:includable>
-
-  <!-- Judul Widget Standard -->
-  <b:includable id='WidgetTitle'>
-    <b:class name='position-relative mb-4'/>
-    <b:if cond='data:title not contains &quot;#&quot;'>
-      <h2 class='widget-title position-relative fs-6 mb-3'><span><data:title/></span></h2>
-    </b:if>
-  </b:includable>
-
-
-  <!-- =================================================== -->
-  <!-- 2. HEADER AREA INCLUDABLES                          -->
-  <!-- =================================================== -->
-
-  <!-- Logo Blog -->
-  <b:includable id='Logo'>
-    <b:if cond='data:content contains &quot;&lt;/svg&gt;&quot;'>
-      <b:class name='logo-wrap position-relative'/>
-      <a class='navbar-brand fw-bold' expr:href='data:blog.canonicalHomepageUrl'>
-        <data:content/>
-      </a>
-    <b:elseif cond='data:content contains &quot;data:image/&quot; OR data:content contains &quot;https://&quot;'/>
-      <b:class name='logo-wrap position-relative'/>
-      <a class='d-block navbar-brand' expr:href='data:blog.canonicalHomepageUrl'>
-        <img expr:alt='data:blog.title' expr:src='data:content' height='55' loading='lazy' width='175'/>
-      </a>
-    <b:else/>
-      <a class='navbar-brand fw-bold' expr:href='data:blog.canonicalHomepageUrl'>
-        <data:content/>
-      </a>
-    </b:if>
-  </b:includable>
-
-  <!-- Menu Navigasi Utama -->
-  <b:includable id='Menu'>
-    <b:class name='collapse navbar-collapse'/>
-    <b:attr name='id' value='navbar'/>
-    <label class='d-flex position-absolute fs-1 d-lg-none mt-4 me-4 top-0 end-0' for='navbar-toggle'><svg aria-hidden='true' class='rd-icon'><use xlink:href='#i-close'/></svg></label>
-    <ul class='navbar-nav px-4 p-lg-0 container' itemscope='itemscope' itemtype='http://schema.org/SiteNavigationElement' role='menu'>
-      <b:loop index='i' values='data:links' var='link'>
-        <b:switch var='data:link.target'>
-          <b:case value='#sub-start'/><input class='d-none' expr:id='&quot;sub-toggle-&quot; + data:i' type='checkbox'/><label class='dropdown-toggle' expr:for='&quot;sub-toggle-&quot; + data:i'/> &lt;ul class=&quot;dropdown-menu rounded-0&quot;&gt; &lt;li class=&quot;d-none&quot;&gt; 
-          <b:case value='#sub-end'/>&lt;/li&gt; &lt;/ul&gt; 
-          <b:default/><b:if cond='data:i gt 0'>&lt;/li&gt;</b:if>&lt;li class=&quot;menu-item&quot;&gt;<a class='nav-link' expr:href='data:link.target' itemprop='url' role='menuitem'><b:class cond='data:view.url.canonical == data:link.target or data:view.url.canonical == path(data:blog.canonicalHomepageUrl, data:link.target)' name='active'/><span itemprop='name'><data:link.name/></span></a>
-        </b:switch>
-      </b:loop>&lt;/li&gt;
-    </ul>
-  </b:includable>
-
-  <!-- Form Pencarian, Media Sosial & Dark Mode Header -->
-  <b:includable id='Search'>
-    <b:class name='d-flex align-self-stretch align-items-center order-lg-1 ms-auto'/>
-    <b:if cond='data:title not contains &quot;#Icons&quot;'>
-      <div class='header-social d-flex pe-1'><b:loop values='data:links' var='link'><a expr:aria-label='data:link.name' expr:class='&quot;px-2 text-reset rd-icon-center i-&quot; + data:link.name' expr:href='data:link.target' rel='noopener' target='_blank'><svg aria-hidden='true' class='rd-icon'><use expr:xlink:href='&quot;#i-&quot; + data:link.name'/></svg></a></b:loop></div>
-    </b:if>
-    <b:if cond='data:title not contains &quot;#Dark&quot;'>
-      <div class='d-flex align-self-stretch align-items-center ps-1' id='dark-header'>
-        <label aria-label='Toggle Dark Mode' class='p-2 rd-icon-center' id='dark-toggler'><svg aria-hidden='true' class='rd-icon'><use class='icon-light' xlink:href='#i-moon'/><use class='icon-dark' xlink:href='#i-sun'/></svg></label>
-      </div>
-    </b:if>
-    <b:if cond='data:title not contains &quot;#Search&quot;'>
-      <div class='d-flex align-self-stretch align-items-center position-md-relative' id='search-header'>
-        <input class='d-none' id='search-toggle' type='checkbox'/>
-        <label aria-label='Toggle search' class='p-2 check-text-primary hover-text-primary rd-icon-center' for='search-toggle' id='search-toggler'><svg aria-hidden='true' class='fs-5 rd-icon'><use xlink:href='#i-search'/></svg></label>
-        <div class='dropdown-menu p-1 shadow-sm d-block-check'>
-          <form class='input-group' expr:action='data:blog.searchUrl' method='GET' target='_top'> 
-            <input class='form-control fs-7 border-0 rounded-0 bg-transparent text-reset' expr:value='data:view.isSearch ? data:view.search.query : &quot;&quot;' id='search-input' name='q' placeholder='Enter your search' required='required' type='text'/>
-            <input name='max-results' type='hidden' value='10'/>
-            <button class='btn btn-sm fw-bold py-2 px-4 rounded-pill border-0 rd-btn-primary m-0' type='submit'>Search</button>
-          </form>
-        </div>
-      </div>
-    </b:if>
-    <div class='d-flex align-self-stretch align-items-center d-lg-none'>
-      <label aria-label='Toggle navigation' class='p-1 rd-icon-center hover-text-primary' for='navbar-toggle' id='navbar-toggler'><svg aria-hidden='true' class='fs-3 rd-icon'><use xlink:href='#i-menu'/></svg></label>
-    </div>
-  </b:includable>
-
-  <!-- Extra Menu Sub-Header -->
-  <b:includable id='ExtraMenu'>
-    <b:class name='container px-0'/>
-    <div class='text-center text-nowrap fs-8 overflow-hidden drag-scroll cursor-default'>
-      <b:loop values='data:links' var='link'>
-        <a class='d-inline-block text-reset hover-text-primary px-3 py-2' expr:href='data:link.target'>
-          <b:class cond='data:view.url == data:link.target' name='text-color'/><data:link.name/>
-        </a>
-      </b:loop>
-    </div>
-  </b:includable>
-
-
-  <!-- =================================================== -->
-  <!-- 3. HERO & FEATURED SECTION                          -->
-  <!-- =================================================== -->
-
-  <!-- Popular Hero Carousel / Grid Utama -->
-  <b:includable id='PopularHero'>
-    <b:class name='position-relative mb-4'/>
-    <b:include name='WidgetTitle'/>
-    <div class='widget-content popular-hero'>
-      <h2 class='d-none'>Popular Posts Weekly</h2>
-      <div class='row g-2'>
-        <b:with value='(data:widgets where (w =&gt; w.type == &quot;Blog&quot; and w.id == &quot;Blog1&quot; )).first' var='jwidget'>
-          <b:loop index='i' values='data:posts' var='post'>
-            <b:if cond='data:i == 0'>&lt;div class=&quot;col-lg-6&quot; &gt;</b:if>
-            <b:if cond='data:i == 0 and data:i lt data:posts.length - 5'>&lt;div id=&quot;popularCarousel&quot; class=&quot;splide position-relative&quot; data-splide=&#39;{&quot;type&quot;:&quot;loop&quot;,&quot;perPage&quot;:1,&quot;autoplay&quot;:1,&quot;pagination&quot;:0,&quot;speed&quot;:1000}&#39;&gt;&lt;div class=&quot;splide__track bg-dark overflow-hidden rounded-3&quot;&gt;&lt;div class=&quot;splide__list d-flex&quot;&gt;</b:if>
-            <div expr:class='data:i lt data:posts.length - 4 and data:posts.length &gt; 5 ? data:i == 0 ? &quot;splide__slide w-100 flex-shrink-0&quot; : &quot;splide__slide w-100 flex-shrink-0&quot; : data:i == 0 ? &quot;&quot; : &quot;&quot;'>
-              <div class='overflow-hidden position-relative'>
-                <b:class cond='data:i gt 0 and data:i gt data:posts.length - 5 or data:posts.length lt 6' name='rounded-3'/>
-                <div class='bg-dark ratio ratio-16x9 ratio-sm-4x3'>
-                  <img expr:alt='data:post.title' expr:class='data:post.featuredImage.isYoutube ? &quot;object-cover lazyload&quot; : &quot;lazyload&quot;' expr:data-src='data:post.featuredImage.isYoutube ? data:post.featuredImage.youtubeMaxResDefaultUrl : data:post.featuredImage' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
-                  <div class='position-absolute' style='background:linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(77, 77, 77, 0) 100%)'/>
-                </div>
-                <div class='item-content max-w-80 start-0 end-0 ps-4 pb-4 position-absolute bottom-0'>
-                  <b:if cond='data:post.labels'>
-                    <div class='item-tag mb-1 fs-8'>
-                      <b:loop index='i' values='data:post.labels where (l =&gt; l.name not contains &quot;#&quot;) take 3' var='label'>
-                        <a class='d-inline-block text-reset rd-bg-light rounded py-1 px-2 mb-2 me-1' expr:href='data:label.url + &quot;?max-results=10&quot;' rel='tag'><data:label.name/></a>
-                      </b:loop>
-                    </div>
-                  </b:if>
-                  <h3 expr:class='data:i == 0 or data:i lt data:posts.length - 4 ? &quot;fs-6 fs-md-4&quot; : &quot;fs-7 fs-md-6&quot;'>
-                    <b:class name='item-title limit-text mb-2 text-white'/>
-                    <a class='text-reset' expr:href='data:post.url'><data:post.title/></a>
-                  </h3>
-                  <div expr:class='data:i == 0 or data:i lt data:posts.length - 4 ? &quot;fs-7&quot; : &quot;fs-8&quot;'>
-                    <b:class name='item-meta d-flex flex-wrap text-white'/>
-                    <b:if cond='data:jwidget.allBylineItems.timestamp'>
-                      <small class='me-2'><svg aria-hidden='true' class='me-1 rd-icon'><use xlink:href='#i-clock'/></svg><span class='date-format' expr:data-date='data:post.date.iso8601'><b:eval expr='data:jwidget.allBylineItems.timestamp.label ? data:post.date format data:jwidget.allBylineItems.timestamp.label : data:post.date'/></span></small>
-                    </b:if>
-                    <b:if cond='data:post.numberOfComments gt 0 and data:jwidget.allBylineItems.comments'>
-                      <small class='me-2'><svg aria-hidden='true' class='me-1 rd-icon'><use xlink:href='#i-comment'/></svg><data:post.numberOfComments/></small>
-                    </b:if>
-                    <small class='d-none'><svg aria-hidden='true' class='me-1 rd-icon'><use xlink:href='#i-eye'/></svg><span class='rd-get-view' expr:data-id='data:post.id'/></small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <b:if cond='data:i == data:posts.length - 5 and data:posts.length gt 5'>&lt;/div&gt;&lt;/div&gt;<div class='splide__arrows position-absolute bottom-0 end-0 pb-1 pe-1'><button aria-label='Previous carousel' class='splide__arrow splide__arrow--prev btn p-1 text-white'><svg aria-hidden='true' class='fs-3 rd-icon '><use xlink:href='#i-arrow-l'/></svg></button><button aria-label='Next carousel' class='splide__arrow splide__arrow--next btn p-1 text-white'><svg aria-hidden='true' class='fs-3 rd-icon'><use xlink:href='#i-arrow-r'/></svg></button></div>&lt;/div&gt;</b:if>
-            <b:if cond='(data:i == data:posts.length - 5 and data:posts.length gt 4) or (data:i == 0 and data:posts.length lt 5)'>&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;div class=&quot;overflow-hidden rounded-3&quot;&gt;&lt;div class=&quot;row g-2 row-cols-sm-2 flex-nowrap flex-lg-wrap overflow-auto drag-scroll&quot;&gt;</b:if>
-            <b:if cond='data:i == data:posts.length - 1'>&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</b:if>
-          </b:loop>
-        </b:with>
-      </div>
-    </div>
-  </b:includable>
-
-  <!-- Featured Post -->
-  <b:includable id='FeaturedPost'>
-    <b:include name='WidgetTitle'/>
-    <b:with value='(data:widgets where (w =&gt; w.type == &quot;Blog&quot; and w.id == &quot;Blog1&quot; )).first' var='jwidget'>
-      <div class='widget-content feature-posts'>
-        <b:loop values='data:posts' var='post'>
-          <div class='item-post d-sm-flex overflow-hidden rounded-3 border rd-border-light bg-archive shadow-sm'>
-            <b:if cond='data:post.featuredImage and data:postDisplay.showFeaturedImage'>
-              <div class='item-thumbnail col-sm-6'>
-                <a class='d-block rd-bg-light overflow-hidden rounded-3 ratio ratio-21x9 ratio-sm-4x3' expr:href='data:post.url.canonical' rel='bookmark'>
-                  <img expr:alt='data:post.title' expr:class='data:post.featuredImage.isYoutube ? &quot;object-cover lazyload&quot; : &quot;lazyload&quot;' expr:data-src='data:post.featuredImage.isYoutube ? data:post.featuredImage.youtubeMaxResDefaultUrl : data:post.featuredImage' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
-                </a>
-              </div>
-            </b:if>
-            <div class='item-content p-4 position-relative rd-border-light'>
-              <b:class cond='data:post.featuredImage' name='col-sm-6'/>
-              <b:if cond='data:post.labels and data:jwidget.allBylineItems.labels'>
-                <div class='item-tag mb-2 fw-light text-secondary text-nowrap overflow-hidden text-truncate fs-8 fs-md-7'>
-                  <b:loop index='i' values='data:post.labels where (l =&gt; l.name not contains &quot;#&quot;) take data:skin.vars.maxLabel' var='label'>
-                    <b:if cond='data:i != 0'>,</b:if>
-                    <a class='text-reset hover-text-primary' expr:href='data:label.url.canonical + &quot;?max-results=10&quot;' rel='tag'>
-                      <data:label.name/>
-                    </a>
-                  </b:loop>
-                </div>
-              </b:if>
-              <b:if cond='data:postDisplay.showTitle'>
-                <h3 class='item-title mb-3 fs-6 fs-md-4'><a class='text-reset' expr:href='data:post.url.canonical'><data:post.title/></a></h3>
-              </b:if>
-              <b:if cond='data:postDisplay.showSnippet'>
-                <p class='item-snippet d-none d-md-block text-break mb-3'><b:eval expr='data:post.snippets.short snippet { links: false, length: 115 }'/></p>
-              </b:if>
-              <div class='item-meta text-secondary d-flex flex-wrap fw-light'>
-                <b:if cond='data:jwidget.allBylineItems.timestamp'>
-                  <small class='me-2'><svg aria-hidden='true' class='me-1 rd-icon'><use xlink:href='#i-clock'/></svg><span class='date-format' expr:data-date='data:post.date.iso8601'><b:eval expr='data:jwidget.allBylineItems.timestamp.label ? data:post.date format data:jwidget.allBylineItems.timestamp.label : data:post.date'/></span></small>
-                </b:if>
-                <b:if cond='data:post.numberOfComments gt 0 and data:jwidget.allBylineItems.comments.label'>
-                  <small class='me-2'><svg aria-hidden='true' class='me-1 rd-icon'><use xlink:href='#i-comment'/></svg><data:post.numberOfComments/></small>
-                </b:if>
-                <small class='d-none'><svg aria-hidden='true' class='me-1 rd-icon'><use xlink:href='#i-eye'/></svg><span class='rd-get-view' expr:data-id='data:post.id'/></small>
-              </div>
-              <span class='position-absolute top-0 end-0 blog-admin'>
-                <a class='btn btn-sm rd-btn-light rounded-pill rd-icon-center' expr:href='&quot;https://www.blogger.com/blog/post/edit/&quot; + data:blog.blogId + &quot;/&quot; + data:post.id' rel='nofollow noopener noreferrer' target='_blank' title='Edit post'><svg aria-hidden='true' class='rd-icon'><use xlink:href='#i-edit'/></svg></a>
-              </span>
-            </div>
-          </div>
-        </b:loop>
-      </div>
-    </b:with>
-  </b:includable>
-
-
-  <!-- =================================================== -->
-  <!-- 4. MAIN BLOG & POST CONTENT INCLUDABLES             -->
-  <!-- =================================================== -->
-
-  <!-- Breadcrumbs Navigasi -->
-  <b:includable id='Breadcrumbs' var='post'>
-    <b:if cond='data:view.isMultipleItems and !data:view.search.query and !data:view.search.label and !data:view.isArchive'>
-      <b:tag class='widget-title position-relative fs-6 mb-4' expr:name='data:view.isHomepage ? &quot;h2&quot; : &quot;div&quot;'><span>Latest Posts</span></b:tag>
-    <b:else/>
-      <div itemscope='itemscope' itemtype='https://schema.org/BreadcrumbList' style='--bs-breadcrumb-divider: url(&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; height=&apos;8&apos; width=&apos;8&apos; fill=&apos;none&apos; viewbox=&apos;0 0 24 24&apos; stroke=&apos;%23686868&apos;%3E%3Cpath stroke-linecap=&apos;round&apos; stroke-linejoin=&apos;round&apos; stroke-width=&apos;1&apos; d=&apos;M 0.5,0.5 4,4 0.5,7.5&apos;/%3E%3C/svg%3E&quot;);'>
-        <ol class='breadcrumb d-block text-nowrap fs-7 overflow-hidden text-truncate'>
-          <b:if cond='data:view.search.query'>
-            <li class='breadcrumb-item d-inline-block'>Search for: <data:view.search.query/></li>
-          <b:else/>
-            <li class='breadcrumb-item d-inline-block' itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>
-              <a expr:href='data:blog.canonicalHomepageUrl' itemprop='item' rel='tag' title='Home'><span itemprop='name'>Home</span></a>
-              <meta content='1' itemprop='position'/>
-            </li>
-            <b:if cond='data:post.labels'>     
-              <b:loop index='i' values='data:post.labels where (l =&gt; l.name not contains &quot;#&quot;) take data:skin.vars.maxLabel' var='label'>
-                <li class='breadcrumb-item d-inline-block' itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>
-                  <a expr:href='data:label.url.canonical + &quot;?max-results=10&quot;' expr:title='data:label.name' itemprop='item' rel='tag'><span itemprop='name'><data:label.name/></span></a>
-                  <meta expr:content='data:i + 2' itemprop='position'/>
-                </li>
-              </b:loop>
-            </b:if>
-            <b:if cond='data:view.search.label'>
-              <li aria-current='page' class='breadcrumb-item d-inline-block active'><b:eval expr='data:view.search.label'/></li>
-            </b:if>
-            <b:if cond='data:view.isArchive'>
-              <li aria-current='page' class='breadcrumb-item d-inline-block active'>
-                <b:loop index='i' values='[data:view.archive.year,data:view.archive.month,data:view.archive.day]' var='dates'>
-                  <b:if cond='data:i == 0'>
-                    <a expr:href='data:blog.canonicalHomepageUrl + data:dates'><data:dates/></a>
-                  </b:if>
-                  <b:if cond='data:i == 1'>
-                    / <a expr:href='data:blog.canonicalHomepageUrl + data:view.archive.year +(data:dates gte 10 ? &quot;/&quot; : &quot;/0&quot; )+ data:dates'>
-                      <b:eval expr='data:dates gte 10 ? data:dates : &quot;0&quot; + data:dates '/>
-                    </a>
-                  </b:if>
-                  <b:if cond='data:i == 2'>
-                    / <data:dates/>
-                  </b:if>
-                </b:loop>
-              </li>
-            </b:if>
-          </b:if>
-        </ol>
-      </div>
-    </b:if>
-  </b:includable>
-
-  <!-- Pusat Kontrol Utama Widget Blog1 -->
-  <b:includable id='Blog'>
-    <b:with value='(data:widgets where (w =&gt; w.type == data:widget.type and w.id == data:widget.instanceId )).first' var='jwidget'>
-      <b:if cond='data:view.isError OR data:numPosts == 0'>
-        <b:include name='Breadcrumbs'/>
-        <b:include name='404'/>
-      <b:elseif cond='data:view.isMultipleItems'/>
-        <b:include name='Breadcrumbs'/>
-        <div class='widget-content'>
-          <div class='mb-5' id='blog-content'>
-            <b:loop index='x' values='data:posts' var='post'>
-              <article class='item-post'>
-                <b:class cond='data:x lt data:posts.length - 1' name='border-bottom rd-border-light pb-3 mb-3'/>
+<!-- =================================================== -->
+<!-- 1. SYSTEM & CORE INCLUDABLES                        -->
+<!-- =================================================== -->
+<!-- Class Body Dinamis -->
+<b:includable id='BodyClass'>
+<b:eval expr='data:view.isHomepage ? &quot;is-home&quot; : data:view.isPost ? &quot;is-single&quot; : data:view.isPage ? &quot;is-page&quot; : data:view.isSearch ? &quot;is-search&quot; : &quot;is-archive&quot;'/>
+</b:includable>
+<!-- Judul Widget Standard -->
+<b:includable id='WidgetTitle'>
+<b:class name='position-relative mb-4'/>
+<b:if cond='data:title not contains &quot;#&quot;'>
+<h2 class='widget-title position-relative fs-6 mb-3'><span><data:title/></span></h2>
+</b:if>
+</b:includable>
+<!-- =================================================== -->
+<!-- 2. HEADER AREA INCLUDABLES                          -->
+<!-- =================================================== -->
+<!-- Logo Blog -->
+<b:includable id='Logo'>
+<b:if cond='data:content contains &quot;&lt;/svg&gt;&quot;'>
+<b:class name='logo-wrap position-relative'/>
+<a class='navbar-brand fw-bold' expr:href='data:blog.canonicalHomepageUrl'>
+<data:content/>
+</a>
+<b:elseif cond='data:content contains &quot;data:image/&quot; OR data:content contains &quot;https://&quot;'/>
+<b:class name='logo-wrap position-relative'/>
+<a class='d-block navbar-brand' expr:href='data:blog.canonicalHomepageUrl'>
+<img expr:alt='data:blog.title' expr:src='data:content' height='55' loading='lazy' width='175'/>
+</a>
+<b:else/>
+<a class='navbar-brand fw-bold' expr:href='data:blog.canonicalHomepageUrl'>
+<data:content/>
+</a>
+</b:if>
+</b:includable>
+<!-- Menu Navigasi Utama -->
+<b:includable id='Menu'>
+<b:class name='collapse navbar-collapse'/>
+<b:attr name='id' value='navbar'/>
+<label class='d-flex position-absolute fs-1 d-lg-none mt-4 me-4 top-0 end-0' for='navbar-toggle'><svg aria-hidden='true' class='rd-icon'><use xlink:href='#i-close'/></svg></label>
+<ul class='navbar-nav px-4 p-lg-0 container' itemscope='itemscope' itemtype='http://schema.org/SiteNavigationElement' role='menu'>
+<b:loop index='i' values='data:links' var='link'>
+<b:switch var='data:link.target'>
+<b:case value='#sub-start'/><input class='d-none' expr:id='&quot;sub-toggle-&quot; + data:i' type='checkbox'/><label class='dropdown-toggle' expr:for='&quot;sub-toggle-&quot; + data:i'/> &lt;ul class=&quot;dropdown-menu rounded-0&quot;&gt; &lt;li class=&quot;d-none&quot;&gt; 
+<b:case value='#sub-end'/>&lt;/li&gt; &lt;/ul&gt; 
+<b:default/><b:if cond='data:i gt 0'>&lt;/li&gt;</b:if>&lt;li class=&quot;menu-item&quot;&gt;<a class='nav-link' expr:href='data:link.target' itemprop='url' role='menuitem'><b:class cond='data:view.url.canonical == data:link.target or data:view.url.canonical == path(data:blog.canonicalHomepageUrl, data:link.target)' name='active'/><span itemprop='name'><data:link.name/></span></a>
+</b:switch>
+</b:loop>&lt;/li&gt;
+</ul>
+</b:includable>
+<!-- Form Pencarian, Media Sosial & Dark Mode Header -->
+<b:includable id='Search'>
+<b:class name='d-flex align-self-stretch align-items-center order-lg-1 ms-auto'/>
+<b:if cond='data:title not contains &quot;#Icons&quot;'>
+<div class='header-social d-flex pe-1'><b:loop values='data:links' var='link'><a expr:aria-label='data:link.name' expr:class='&quot;px-2 text-reset rd-icon-center i-&quot; + data:link.name' expr:href='data:link.target' rel='noopener' target='_blank'><svg aria-hidden='true' class='rd-icon'><use expr:xlink:href='&quot;#i-&quot; + data:link.name'/></svg></a></b:loop></div>
+</b:if>
+<b:if cond='data:title not contains &quot;#Dark&quot;'>
+<div class='d-flex align-self-stretch align-items-center ps-1' id='dark-header'>
+<label aria-label='Toggle Dark Mode' class='p-2 rd-icon-center' id='dark-toggler'><svg aria-hidden='true' class='rd-icon'><use class='icon-light' xlink:href='#i-moon'/><use class='icon-dark' xlink:href='#i-sun'/></svg></label>
+</div>
+</b:if>
+<b:if cond='data:title not contains &quot;#Search&quot;'>
+<div class='d-flex align-self-stretch align-items-center position-md-relative' id='search-header'>
+<input class='d-none' id='search-toggle' type='checkbox'/>
+<label aria-label='Toggle search' class='p-2 check-text-primary hover-text-primary rd-icon-center' for='search-toggle' id='search-toggler'><svg aria-hidden='true' class='fs-5 rd-icon'><use xlink:href='#i-search'/></svg></label>
+<div class='dropdown-menu p-1 shadow-sm d-block-check'>
+<form class='input-group' expr:action='data:blog.searchUrl' method='GET' target='_top'> 
+<input class='form-control fs-7 border-0 rounded-0 bg-transparent text-reset' expr:value='data:view.isSearch ? data:view.search.query : &quot;&quot;' id='search-input' name='q' placeholder='Enter your search' required='required' type='text'/>
+<input name='max-results' type='hidden' value='10'/>
+<button class='btn btn-sm fw-bold py-2 px-4 rounded-pill border-0 rd-btn-primary m-0' type='submit'>Search</button>
+</form>
+</div>
+</div>
+</b:if>
+<div class='d-flex align-self-stretch align-items-center d-lg-none'>
+<label aria-label='Toggle navigation' class='p-1 rd-icon-center hover-text-primary' for='navbar-toggle' id='navbar-toggler'><svg aria-hidden='true' class='fs-3 rd-icon'><use xlink:href='#i-menu'/></svg></label>
+</div>
+</b:includable>
+<!-- Extra Menu Sub-Header -->
+<b:includable id='ExtraMenu'>
+<b:class name='container px-0'/>
+<div class='text-center text-nowrap fs-8 overflow-hidden drag-scroll cursor-default'>
+<b:loop values='data:links' var='link'>
+<a class='d-inline-block text-reset hover-text-primary px-3 py-2' expr:href='data:link.target'>
+<b:class cond='data:view.url == data:link.target' name='text-color'/><data:link.name/>
+</a>
+</b:loop>
+</div>
+</b:includable>
+<!-- =================================================== -->
+<!-- 3. HERO & FEATURED SECTION                          -->
+<!-- =================================================== -->
+<!-- Popular Hero Carousel / Grid Utama -->
+<b:includable id='PopularHero'>
+<b:class name='position-relative mb-4'/>
+<b:include name='WidgetTitle'/>
+<div class='widget-content popular-hero'>
+<h2 class='d-none'>Popular Posts Weekly</h2>
+<div class='row g-2'>
+<b:with value='(data:widgets where (w =&gt; w.type == &quot;Blog&quot; and w.id == &quot;Blog1&quot; )).first' var='jwidget'>
+<b:loop index='i' values='data:posts' var='post'>
+<b:if cond='data:i == 0'>&lt;div class=&quot;col-lg-6&quot; &gt;</b:if>
+<b:if cond='data:i == 0 and data:i lt data:posts.length - 5'>&lt;div id=&quot;popularCarousel&quot; class=&quot;splide position-relative&quot; data-splide=&#39;{&quot;type&quot;:&quot;loop&quot;,&quot;perPage&quot;:1,&quot;autoplay&quot;:1,&quot;pagination&quot;:0,&quot;speed&quot;:1000}&#39;&gt;&lt;div class=&quot;splide__track bg-dark overflow-hidden rounded-3&quot;&gt;&lt;div class=&quot;splide__list d-flex&quot;&gt;</b:if>
+<div expr:class='data:i lt data:posts.length - 4 and data:posts.length &gt; 5 ? data:i == 0 ? &quot;splide__slide w-100 flex-shrink-0&quot; : &quot;splide__slide w-100 flex-shrink-0&quot; : data:i == 0 ? &quot;&quot; : &quot;&quot;'>
+<div class='overflow-hidden position-relative'>
+<b:class cond='data:i gt 0 and data:i gt data:posts.length - 5 or data:posts.length lt 6' name='rounded-3'/>
+<div class='bg-dark ratio ratio-16x9 ratio-sm-4x3'>
+<img expr:alt='data:post.title' expr:class='data:post.featuredImage.isYoutube ? &quot;object-cover lazyload&quot; : &quot;lazyload&quot;' expr:data-src='data:post.featuredImage.isYoutube ? data:post.featuredImage.youtubeMaxResDefaultUrl : data:post.featuredImage' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
+<div class='position-absolute' style='background:linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(77, 77, 77, 0) 100%)'/>
+</div>
+<div class='item-content max-w-80 start-0 end-0 ps-4 pb-4 position-absolute bottom-0'>
+<b:if cond='data:post.labels'>
+<div class='item-tag mb-1 fs-8'>
+<b:loop index='i' values='data:post.labels where (l =&gt; l.name not contains &quot;#&quot;) take 3' var='label'>
+<a class='d-inline-block text-reset rd-bg-light rounded py-1 px-2 mb-2 me-1' expr:href='data:label.url + &quot;?max-results=10&quot;' rel='tag'><data:label.name/></a>
+</b:loop>
+</div>
+</b:if>
+<h3 expr:class='data:i == 0 or data:i lt data:posts.length - 4 ? &quot;fs-6 fs-md-4&quot; : &quot;fs-7 fs-md-6&quot;'>
+<b:class name='item-title limit-text mb-2 text-white'/>
+<a class='text-reset' expr:href='data:post.url'><data:post.title/></a>
+</h3>
+<div expr:class='data:i == 0 or data:i lt data:posts.length - 4 ? &quot;fs-7&quot; : &quot;fs-8&quot;'>
+<b:class name='item-meta d-flex flex-wrap text-white'/>
+<b:if cond='data:jwidget.allBylineItems.timestamp'>
+<small class='me-2'><svg aria-hidden='true' class='me-1 rd-icon'><use xlink:href='#i-clock'/></svg><span class='date-format' expr:data-date='data:post.date.iso8601'><b:eval expr='data:jwidget.allBylineItems.timestamp.label ? data:post.date format data:jwidget.allBylineItems.timestamp.label : data:post.date'/></span></small>
+</b:if>
+<b:if cond='data:post.numberOfComments gt 0 and data:jwidget.allBylineItems.comments'>
+<small class='me-2'><svg aria-hidden='true' class='me-1 rd-icon'><use xlink:href='#i-comment'/></svg><data:post.numberOfComments/></small>
+</b:if>
+<small class='d-none'><svg aria-hidden='true' class='me-1 rd-icon'><use xlink:href='#i-eye'/></svg><span class='rd-get-view' expr:data-id='data:post.id'/></small>
+</div>
+</div>
+</div>
+</div>
+<b:if cond='data:i == data:posts.length - 5 and data:posts.length gt 5'>&lt;/div&gt;&lt;/div&gt;<div class='splide__arrows position-absolute bottom-0 end-0 pb-1 pe-1'><button aria-label='Previous carousel' class='splide__arrow splide__arrow--prev btn p-1 text-white'><svg aria-hidden='true' class='fs-3 rd-icon '><use xlink:href='#i-arrow-l'/></svg></button><button aria-label='Next carousel' class='splide__arrow splide__arrow--next btn p-1 text-white'><svg aria-hidden='true' class='fs-3 rd-icon'><use xlink:href='#i-arrow-r'/></svg></button></div>&lt;/div&gt;</b:if>
+<b:if cond='(data:i == data:posts.length - 5 and data:posts.length gt 4) or (data:i == 0 and data:posts.length lt 5)'>&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;div class=&quot;overflow-hidden rounded-3&quot;&gt;&lt;div class=&quot;row g-2 row-cols-sm-2 flex-nowrap flex-lg-wrap overflow-auto drag-scroll&quot;&gt;</b:if>
+<b:if cond='data:i == data:posts.length - 1'>&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</b:if>
+</b:loop>
+</b:with>
+</div>
+</div>
+</b:includable>
+<!-- Featured Post -->
+<b:includable id='FeaturedPost'>
+<b:include name='WidgetTitle'/>
+<b:with value='(data:widgets where (w =&gt; w.type == &quot;Blog&quot; and w.id == &quot;Blog1&quot; )).first' var='jwidget'>
+<div class='widget-content feature-posts'>
+<b:loop values='data:posts' var='post'>
+<div class='item-post d-sm-flex overflow-hidden rounded-3 border rd-border-light bg-archive shadow-sm'>
+<b:if cond='data:post.featuredImage and data:postDisplay.showFeaturedImage'>
+<div class='item-thumbnail col-sm-6'>
+<a class='d-block rd-bg-light overflow-hidden rounded-3 ratio ratio-21x9 ratio-sm-4x3' expr:href='data:post.url.canonical' rel='bookmark'>
+<img expr:alt='data:post.title' expr:class='data:post.featuredImage.isYoutube ? &quot;object-cover lazyload&quot; : &quot;lazyload&quot;' expr:data-src='data:post.featuredImage.isYoutube ? data:post.featuredImage.youtubeMaxResDefaultUrl : data:post.featuredImage' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
+</a>
+</div>
+</b:if>
+<div class='item-content p-4 position-relative rd-border-light'>
+<b:class cond='data:post.featuredImage' name='col-sm-6'/>
+<b:if cond='data:post.labels and data:jwidget.allBylineItems.labels'>
+<div class='item-tag mb-2 fw-light text-secondary text-nowrap overflow-hidden text-truncate fs-8 fs-md-7'>
+<b:loop index='i' values='data:post.labels where (l =&gt; l.name not contains &quot;#&quot;) take data:skin.vars.maxLabel' var='label'>
+<b:if cond='data:i != 0'>,</b:if>
+<a class='text-reset hover-text-primary' expr:href='data:label.url.canonical + &quot;?max-results=10&quot;' rel='tag'>
+<data:label.name/>
+</a>
+</b:loop>
+</div>
+</b:if>
+<b:if cond='data:postDisplay.showTitle'>
+<h3 class='item-title mb-3 fs-6 fs-md-4'><a class='text-reset' expr:href='data:post.url.canonical'><data:post.title/></a></h3>
+</b:if>
+<b:if cond='data:postDisplay.showSnippet'>
+<p class='item-snippet d-none d-md-block text-break mb-3'><b:eval expr='data:post.snippets.short snippet { links: false, length: 115 }'/></p>
+</b:if>
+<div class='item-meta text-secondary d-flex flex-wrap fw-light'>
+<b:if cond='data:jwidget.allBylineItems.timestamp'>
+<small class='me-2'><svg aria-hidden='true' class='me-1 rd-icon'><use xlink:href='#i-clock'/></svg><span class='date-format' expr:data-date='data:post.date.iso8601'><b:eval expr='data:jwidget.allBylineItems.timestamp.label ? data:post.date format data:jwidget.allBylineItems.timestamp.label : data:post.date'/></span></small>
+</b:if>
+<b:if cond='data:post.numberOfComments gt 0 and data:jwidget.allBylineItems.comments.label'>
+<small class='me-2'><svg aria-hidden='true' class='me-1 rd-icon'><use xlink:href='#i-comment'/></svg><data:post.numberOfComments/></small>
+</b:if>
+<small class='d-none'><svg aria-hidden='true' class='me-1 rd-icon'><use xlink:href='#i-eye'/></svg><span class='rd-get-view' expr:data-id='data:post.id'/></small>
+</div>
+<span class='position-absolute top-0 end-0 blog-admin'>
+<a class='btn btn-sm rd-btn-light rounded-pill rd-icon-center' expr:href='&quot;https://www.blogger.com/blog/post/edit/&quot; + data:blog.blogId + &quot;/&quot; + data:post.id' rel='nofollow noopener noreferrer' target='_blank' title='Edit post'><svg aria-hidden='true' class='rd-icon'><use xlink:href='#i-edit'/></svg></a>
+</span>
+</div>
+</div>
+</b:loop>
+</div>
+</b:with>
+</b:includable>
+<!-- =================================================== -->
+<!-- 4. MAIN BLOG & POST CONTENT INCLUDABLES             -->
+<!-- =================================================== -->
+<!-- Breadcrumbs Navigasi -->
+<b:includable id='Breadcrumbs' var='post'>
+<b:if cond='data:view.isMultipleItems and !data:view.search.query and !data:view.search.label and !data:view.isArchive'>
+<b:tag class='widget-title position-relative fs-6 mb-4' expr:name='data:view.isHomepage ? &quot;h2&quot; : &quot;div&quot;'><span>Latest Posts</span></b:tag>
+<b:else/>
+<div itemscope='itemscope' itemtype='https://schema.org/BreadcrumbList' style='--bs-breadcrumb-divider: url(&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; height=&apos;8&apos; width=&apos;8&apos; fill=&apos;none&apos; viewbox=&apos;0 0 24 24&apos; stroke=&apos;%23686868&apos;%3E%3Cpath stroke-linecap=&apos;round&apos; stroke-linejoin=&apos;round&apos; stroke-width=&apos;1&apos; d=&apos;M 0.5,0.5 4,4 0.5,7.5&apos;/%3E%3C/svg%3E&quot;);'>
+<ol class='breadcrumb d-block text-nowrap fs-7 overflow-hidden text-truncate'>
+<b:if cond='data:view.search.query'>
+<li class='breadcrumb-item d-inline-block'>Search for: <data:view.search.query/></li>
+<b:else/>
+<li class='breadcrumb-item d-inline-block' itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>
+<a expr:href='data:blog.canonicalHomepageUrl' itemprop='item' rel='tag' title='Home'><span itemprop='name'>Home</span></a>
+<meta content='1' itemprop='position'/>
+</li>
+<b:if cond='data:post.labels'>     
+<b:loop index='i' values='data:post.labels where (l =&gt; l.name not contains &quot;#&quot;) take data:skin.vars.maxLabel' var='label'>
+<li class='breadcrumb-item d-inline-block' itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>
+<a expr:href='data:label.url.canonical + &quot;?max-results=10&quot;' expr:title='data:label.name' itemprop='item' rel='tag'><span itemprop='name'><data:label.name/></span></a>
+<meta expr:content='data:i + 2' itemprop='position'/>
+</li>
+</b:loop>
+</b:if>
+<b:if cond='data:view.search.label'>
+<li aria-current='page' class='breadcrumb-item d-inline-block active'><b:eval expr='data:view.search.label'/></li>
+</b:if>
+<b:if cond='data:view.isArchive'>
+<li aria-current='page' class='breadcrumb-item d-inline-block active'>
+<b:loop index='i' values='[data:view.archive.year,data:view.archive.month,data:view.archive.day]' var='dates'>
+<b:if cond='data:i == 0'>
+<a expr:href='data:blog.canonicalHomepageUrl + data:dates'><data:dates/></a>
+</b:if>
+<b:if cond='data:i == 1'>
+/ <a expr:href='data:blog.canonicalHomepageUrl + data:view.archive.year +(data:dates gte 10 ? &quot;/&quot; : &quot;/0&quot; )+ data:dates'>
+<b:eval expr='data:dates gte 10 ? data:dates : &quot;0&quot; + data:dates '/>
+</a>
+</b:if>
+<b:if cond='data:i == 2'>
+/ <data:dates/>
+</b:if>
+</b:loop>
+</li>
+</b:if>
+</b:if>
+</ol>
+</div>
+</b:if>
+</b:includable>
+<!-- Pusat Kontrol Utama Widget Blog1 -->
+<b:includable id='Blog'>
+<b:with value='(data:widgets where (w =&gt; w.type == data:widget.type and w.id == data:widget.instanceId )).first' var='jwidget'>
+<b:if cond='data:view.isError OR data:numPosts == 0'>
+<b:include name='Breadcrumbs'/>
+<b:include name='404'/>
+<b:elseif cond='data:view.isMultipleItems'/>
+<b:include name='Breadcrumbs'/>
+<div class='widget-content'>
+<div class='mb-5' id='blog-content'>
+<b:loop index='x' values='data:posts' var='post'>
+<article class='item-post'>
+<b:class cond='data:x lt data:posts.length - 1' name='border-bottom rd-border-light pb-3 mb-3'/>
                 <b:include data='post' name='Archive'/>
               </article>
             </b:loop>
