@@ -436,30 +436,29 @@
 <b:loop index='x' values='data:posts' var='post'>
 <article class='item-post'>
 <b:class cond='data:x lt data:posts.length - 1' name='border-bottom rd-border-light pb-3 mb-3'/>
-                <b:include data='post' name='Archive'/>
-              </article>
-            </b:loop>
-          </div>
-          <b:include name='Pagination'/>
-        </div>
-      <b:else/>
-        <b:loop values='data:posts' var='post'>
-          <b:if cond='data:view.isPost'>
-            <b:include data='post' name='Breadcrumbs'/>
-            <b:include data='post' name='Post'/>
-            <b:include name='Pagination'/>
-            <b:include data='post' name='Comments'/>
-            <b:include data='post' name='RelatedPost'/>            
-          <b:elseif cond='data:view.isPage'/>
-            <b:include data='post' name='Page'/>
-            <b:include data='post' name='Comments'/>
-          </b:if>          
-        </b:loop>
-      </b:if>
-    </b:with>
-  </b:includable>
-
-  <!-- Item Daftar Post/Arsip Halaman Depan -->
+<b:include data='post' name='Archive'/>
+</article>
+</b:loop>
+</div>
+<b:include name='Pagination'/>
+</div>
+<b:else/>
+<b:loop values='data:posts' var='post'>
+<b:if cond='data:view.isPost'>
+<b:include data='post' name='Breadcrumbs'/>
+<b:include data='post' name='Post'/>
+<b:include name='Pagination'/>
+<b:include data='post' name='Comments'/>
+<b:include data='post' name='RelatedPost'/>            
+<b:elseif cond='data:view.isPage'/>
+<b:include data='post' name='Page'/>
+<b:include data='post' name='Comments'/>
+</b:if>          
+</b:loop>
+</b:if>
+</b:with>
+</b:includable>
+<!-- Item Daftar Post/Arsip Halaman Depan -->
   <b:includable id='Archive' var='post'>
     <div class='d-flex position-relative'>
       <b:include data='post' name='PostMeta'/>
@@ -971,19 +970,18 @@
       </form>
     </div>
   </b:includable>
-
-  <!-- Widget Gambar -->
-  <b:includable id='Image'>
-    <b:include name='WidgetTitle'/>
-    <div class='widget-content'>
-      <div class='overflow-hidden position-relative'>
-        <b:class cond='data:title contains &quot;#&quot;' name='rounded-3'/>
-        <div class='bg-dark ratio ratio-4x3'>
-          <img class='lazyload' expr:alt='data:caption' expr:data-src='data:sourceUrl' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
-          <b:tag class='image-content px-3 position-absolute d-flex justify-content-center align-items-center' cond='data:caption or data:link' expr:name='data:caption ? &quot;div&quot; : &quot;a&quot;'>
-            <b:attr cond='!data:caption' expr:value='data:link' name='href'/> 
-            <b:attr cond='data:caption' name='style' value='background:linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(77, 77, 77, 0) 100%)'/>
-            <b:tag class='py-2 px-4 rd-bg-white' cond='data:caption' expr:href='data:link' expr:name='data:link ? &quot;a&quot; : &quot;span&quot;'><b:class cond='data:caption and data:link' name='btn btn-sm rd-btn-light hover-btn-primary'/><data:caption/></b:tag>
+<!-- Widget Gambar -->
+<b:includable id='Image'>
+<b:include name='WidgetTitle'/>
+<div class='widget-content'>
+<div class='overflow-hidden position-relative'>
+<b:class cond='data:title contains &quot;#&quot;' name='rounded-3'/>
+<div class='bg-dark ratio ratio-4x3'>
+<img class='lazyload' expr:alt='data:caption' expr:data-src='data:sourceUrl' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
+<b:tag class='image-content px-3 position-absolute d-flex justify-content-center align-items-center' cond='data:caption or data:link' expr:name='data:caption ? &quot;div&quot; : &quot;a&quot;'>
+<b:attr cond='!data:caption' expr:value='data:link' name='href'/> 
+<b:attr cond='data:caption' name='style' value='background:linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(77, 77, 77, 0) 100%)'/>
+<b:tag class='py-2 px-4 rd-bg-white' cond='data:caption' expr:href='data:link' expr:name='data:link ? &quot;a&quot; : &quot;span&quot;'><b:class cond='data:caption and data:link' name='btn btn-sm rd-btn-light hover-btn-primary'/><data:caption/></b:tag>
 </b:tag>
 </div>
 </div>
