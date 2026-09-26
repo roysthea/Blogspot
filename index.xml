@@ -1,22 +1,145 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:css='false' b:defaultwidgetversion='2' b:js='true' b:layoutsVersion='3' b:render='true' b:responsive='true' b:templateUrl='https://www.roysthea.blogspot.com' b:templateVersion='0.4' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
-<b:attr name='xmlns' value='Roysthea'/>
-<b:attr name='xmlns:b' value='Roysthea'/>
-<b:attr name='xmlns:expr' value='Roysthea'/>
-<b:attr name='xmlns:data' value='Roysthea'/>
-<head>
-<b:include name='head-content'/>
-<b:if cond='!data:view.isLayoutMode'>
-<b:skin><![CDATA[/*
+<html b:css='false' 
+      b:defaultwidgetversion='2' 
+      b:js='true' 
+      b:layoutsVersion='3' 
+      b:render='true' 
+      b:responsive='true' 
+      b:templateUrl='https://www.roysthea.blogspot.com' 
+      b:templateVersion='0.4' 
+      expr:dir='data:blog.languageDirection' 
+      expr:lang='data:blog.locale' 
+      xmlns='http://www.w3.org/1999/xhtml' 
+      xmlns:b='http://www.google.com/2005/gml/b' 
+      xmlns:data='http://www.google.com/2005/gml/data' 
+      xmlns:expr='http://www.google.com/2005/gml/expr'>
 
-]]></b:skin>
-</b:if>
-<b:if cond='data:view.isLayoutMode'>
-<b:template-skin><![CDATA[
+  <b:attr name='xmlns' value='Roysthea'/>
+  <b:attr name='xmlns:b' value='Roysthea'/>
+  <b:attr name='xmlns:expr' value='Roysthea'/>
+  <b:attr name='xmlns:data' value='Roysthea'/>
 
-]]></b:template-skin>
-</b:if>
+  <head>
+    <b:include name='head-content'/>
+
+    <!-- =================================================== -->
+    <!-- BLOGGER SKIN & VARIABLE CONFIGURATION               -->
+    <!-- =================================================== -->
+    <b:if cond='!data:view.isLayoutMode'>
+      <b:skin><![CDATA[
+/*
+---------------------------------------------------------
+Name        : ROYSTHEA DIGITAL TEMPLATE
+Version     : 0.4
+Author      : Roysthea
+URL         : https://www.roysthea.blogspot.com
+Timezone    : WIB (Asia/Jakarta - UTC+07:00)
+Description : Lightweight & Responsive Blogger V3 Template
+---------------------------------------------------------
+*/
+
+<Group description="ROYSTHEA - VARIABLE">
+<Variable name="tagline" description="Roysthea" type="string" value="Roysthea"/>
+<Variable name="separator" description="Separator" type="string" value=" - "/>
+<Variable name="description" description="Simple My Blogger" type="string" value=""/>
+<Variable name="cover" description="Cover" type="string" value="Cover"/>
+<Variable name="logo" description="Logo" type="string" value="ROYSTHEA DIGITAL"/>
+<Variable name="favicon" description="Favicon" type="string" value="Favicon ico"/>
+<Variable name="analyticId" description="XY4WV3LY4P" type="string" value="XY4WV3LY4P"/>
+<Variable name="caPubAdsense" description="pub-8095215920624768" type="string" value="pub-8095215920624768"/> 
+<Variable name="autoTOC" description="Table of content" type="string" value="true"/>
+<Variable name="positionTOC" description="Position TOC" type="string" value="noscript"/>
+<Variable name="maxLabel" description="Limit Label" type="string" value="3"/>
+<Variable name="firebaseUrl" description="Firebase Url" type="string" value=""/>
+<Variable name="safeAds" description="Safe Adsense" type="string" value="false"/>
+<Variable name="limitAdsClick" description="limit Adsense User Click" type="string" value="3"/>
+<Variable name="safeLinkUrl" description="Safe Link Url" type="string" value="/p/safelink.html"/>
+<Variable name="safeLinkGenerate" description="Generate Url SafeLink" type="string" value=".safelink"/>
+<Variable name="ignoreSafeLink" description="Ignore SafeLink Url" type="string" value=""/>
+<Variable name="header" description="Header Background SVG/Image" type="string" default="" value=""/>
+</Group>
+
+<Group description="Main Color">
+<Variable name="keycolor" description="Main Color" type="color" default="#f67938" value="#0B8043"/>
+<Variable name="body.background" description="Body Background Color" type="color" default="#ededed" value="#ededed"/>
+<Variable name="body.text.color" description="Font Color" type="color" default="#686868" value="#000000"/>
+<Variable name="posts.title.color" description="Heading Color" type="color" default="#343a40" value="#000000"/>
+<Variable name="body.link.color" description="Link Color" type="color" default="$(keycolor)" value="#f67938"/>
+<Variable name="body.hover.color" description="Link Hover" type="color" default="#f46013" value="#f46013"/>
+<Variable name="border.color" description="Border Color" type="color" default="#efefef" value="#efefef"/>
+<Variable name="posts.text.color" description="Blockquote Border Color" type="color" default="$(keycolor)" value="#0B8043"/>
+</Group>
+
+<Group description="Typography">
+<Variable name="body.text" description="Body Font" type="font" default="normal normal 16px system-ui,-apple-system,Segoe UI,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji" value="normal normal 16px system-ui,-apple-system,Segoe UI,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji"/>
+<Variable name="posts.title" description="Heading Font" type="font" default="normal bold 40px var(--bs-font-sans-serif)" value="normal bold 40px var(--bs-font-sans-serif)"/>
+<Variable name="title.h2" description="H2 Size" type="length" default="26px" min="12px" max="50px" value="26px"/>
+<Variable name="title.h3" description="H3 Size" type="length" default="22px" min="12px" max="50px" value="22px"/>
+<Variable name="title.h4" description="H4 Size" type="length" default="20px" min="12px" max="50px" value="20px"/>
+<Variable name="title.h5" description="H5 Size" type="length" default="18px" min="12px" max="50px" value="18px"/>
+<Variable name="title.h6" description="H6 Size" type="length" default="16px" min="12px" max="50px" value="16px"/>
+</Group>
+
+<Group description="Logo">
+<Variable name="logo.width" description="Logo Max Width" type="length" default="200px" min="50px" max="500px" value="200px"/>
+<Variable name="logo.width.mobile" description="Logo Max Width (mobile)" type="length" default="150px" min="50px" max="500px" value="150px"/>
+</Group>
+
+<Group description="Header Color">
+<Variable name="header.bg" description="Background" type="color" default="#f2f5f7" value="#f2f5f7"/>
+<Variable name="header.color" description="Font Color " type="color" default="#686868" value="#686868"/>
+<Variable name="header.border" description="Border Color" type="color" default="#efefef" value="#efefef"/>
+</Group>
+
+<Group description="Menu">
+<Variable name="tabs.font" description="Menu Font" type="font" default="normal bold 16px var(--bs-font-sans-serif)" value="normal bold 16px var(--bs-font-sans-serif)"/>
+<Variable name="tabs.color" description="Font Color" type="color" default="$(body.text.color)" value="#686868"/>
+<Variable name="tabs.hover" description="Font Hover" type="color" default="$(keycolor)" value="#f67938"/>
+<Variable name="tabs.selected.color" description="Font Selected" type="color" default="$(keycolor)" value="#f67938"/>
+</Group>
+
+<Group description="Dropdown Menu">
+<Variable name="dropdown.font" description="Font Size" type="length" default="16px" min="12px" max="50px" value="15px"/>
+<Variable name="dropdown.bg" description="Background Color" type="color" default="$(body.text.color)" value="#ffffff"/>
+<Variable name="dropdown.color" description="Font Color" type="color" default="$(keycolor)" value="#686868"/>
+<Variable name="dropdown.hover" description="Font Hover" type="color" default="$(keycolor)" value="#f67938"/>
+<Variable name="dropdown.selected" description="Dropdown Selected Color" type="color" default="$(keycolor)" value="#f67938"/>
+</Group>
+
+<Group description="Footer Color">
+<Variable name="footer.bg" description="Background Color" type="color" default="#212529" value="#212529"/>
+<Variable name="footer.color" description="Font Color" type="color" default="#9fa6ad" value="#9fa6ad"/>
+<Variable name="footer.link" description="Link Color" type="color" default="#9fa6ad" value="#9fa6ad"/>
+<Variable name="footer.border" description="Border Color" type="color" default="#323539" value="#323539"/>
+</Group>
+
+<Group description="Socket Color">
+<Variable name="socket.bg" description="Background Color" type="color" default="#09080c" value="#09080c"/>
+<Variable name="socket.color" description="Font Color" type="color" default="#9fa6ad" value="#9fa6ad"/>
+</Group>
+
+<Group description="Button">
+<Variable name="posts.icons.color" description="Button Color" type="color" default="$(keycolor)" value="#f67938"/>
+<Variable name="labels.background.color" description="Button Hover" type="color" default="#f46013" value="#f46013"/>
+</Group>
+
+<Group description="Comment Form">
+<Variable name="body.text.font" description="Font" type="font" default="normal normal 14px system-ui,-apple-system,Segoe UI,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji" value="normal normal 14px system-ui,-apple-system,Segoe UI,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji"/>
+<Variable name="posts.background.color" description="Background" type="color" default="transparent" value="rgba(0,0,0,0)"/>
+</Group>
+
+      ]]></b:skin>
+    </b:if>
+
+    <b:if cond='data:view.isLayoutMode'>
+      <b:template-skin><![CDATA[
+        /* CSS khusus untuk tampilan Layout Mode di Admin Blogger */
+        body#layout { max-width: 1140px; margin: 0 auto; }
+      ]]></b:template-skin>
+    </b:if>
+
+  </head>
 <b:defaultmarkups>
 <b:defaultmarkup type='Common'>
 <b:includable id='head-content'>
