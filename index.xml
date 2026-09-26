@@ -1047,7 +1047,243 @@
 </b:defaultmarkups>
   
 <b:defaultmarkups>
-
+<!-- =================================================== -->
+<!-- 1. HEADER & NAVIGATION AREA                        -->
+<!-- =================================================== -->
+<!-- Menu Navigasi (LinkList & PageList) -->
+<b:defaultmarkup type='LinkList'>
+<b:includable id='main'>
+<b:include name='LinkList'/>
+</b:includable>
+<b:includable id='content'/>
+</b:defaultmarkup>
+  
+<b:defaultmarkup type='PageList'>
+<b:includable id='main'>
+<b:include name='PageList'/>
+</b:includable>
+<b:includable id='content'/>
+<b:includable id='overflowButton'/>
+<b:includable id='overflowablePageList'/>
+<b:includable id='pageLink'/>
+<b:includable id='pageList'/>
+</b:defaultmarkup>
+<!-- HTML & Text (Untuk Widget Custom Header/Search) -->
+<b:defaultmarkup type='HTML,Text'>
+<b:includable id='main'>
+<b:include name='Html'/>
+</b:includable>
+</b:defaultmarkup>
+<!-- =================================================== -->
+<!-- 2. HERO & FEATURED SECTION (FULL-WIDTH UNDER HEADER) -->
+<!-- =================================================== -->
+<!-- PopularHero (PopularPosts) -->
+<b:defaultmarkup type='PopularPosts'>
+<b:includable id='main'>
+<b:include name='PopularPosts'/>
+</b:includable>
+<b:includable id='blogThisShare'/>
+<b:includable id='bylineByName'/>
+<b:includable id='bylineRegion'/>
+<b:includable id='commentsLink'/>
+<b:includable id='commentsLinkIframe'/>
+<b:includable id='emailPostIcon'/>
+<b:includable id='facebookShare'/>
+<b:includable id='footerBylines'/>
+<b:includable id='googlePlusShare'/>
+<b:includable id='headerByline'/>
+<b:includable id='linkShare'/>
+<b:includable id='otherSharingButton'/>
+<b:includable id='platformShare'/>
+<b:includable id='postAuthor'/>
+<b:includable id='postCommentsLink'/>
+<b:includable id='postJumpLink'/>
+<b:includable id='postLabels'/>
+<b:includable id='postLocation'/>
+<b:includable id='postReactions'/>
+<b:includable id='postShareButtons'/>
+<b:includable id='postTimestamp'/>
+<b:includable id='sharingButton'/>
+<b:includable id='sharingButtonContent'/>
+<b:includable id='sharingButtons'/>
+<b:includable id='sharingButtonsMenu'/>
+<b:includable id='sharingPlatformIcon'/>
+<b:includable id='snippetedPostByline'/>
+<b:includable id='snippetedPostContent'/>
+<b:includable id='snippetedPostThumbnail'/>
+<b:includable id='snippetedPostTitle'/>
+<b:includable id='snippetedPosts'/>
+</b:defaultmarkup>
+<!-- FeaturedPost -->
+<b:defaultmarkup type='FeaturedPost'>
+<b:includable id='main' var='this'>
+<b:include name='FeaturedPost'/>
+</b:includable>
+<b:includable id='blogThisShare'/>
+<b:includable id='bylineByName'/>
+<b:includable id='bylineRegion'/>
+<b:includable id='commentsLink'/>
+<b:includable id='commentsLinkIframe'/>
+<b:includable id='emailPostIcon'/>
+<b:includable id='facebookShare'/>
+<b:includable id='footerBylines'/>
+<b:includable id='googlePlusShare'/>
+<b:includable id='headerByline'/>
+<b:includable id='linkShare'/>
+<b:includable id='otherSharingButton'/>
+<b:includable id='platformShare'/>
+<b:includable id='postAuthor'/>
+<b:includable id='postCommentsLink'/>
+<b:includable id='postJumpLink'/>
+<b:includable id='postLabels'/>
+<b:includable id='postLocation'/>
+<b:includable id='postReactions'/>
+<b:includable id='postShareButtons'/>
+<b:includable id='postTimestamp'/>
+<b:includable id='sharingButton'/>
+<b:includable id='sharingButtonContent'/>
+<b:includable id='sharingButtons'/>
+<b:includable id='sharingButtonsMenu'/>
+<b:includable id='sharingPlatformIcon'/>
+<b:includable id='snippetedPostByline'/>
+<b:includable id='snippetedPostContent'/>
+<b:includable id='snippetedPostThumbnail'/>
+<b:includable id='snippetedPostTitle'/>
+<b:includable id='snippetedPosts'/>
+</b:defaultmarkup>
+<!-- =================================================== -->
+<!-- 3. MAIN CONTENT (BLOG1) AREA                        -->
+<!-- =================================================== -->
+<b:defaultmarkup type='Blog'>
+<b:includable id='main' var='top'>
+<b:include name='Blog'/>
+</b:includable>
+<b:includable id='aboutPostAuthor'/>
+<b:includable id='addComments'/>
+<b:includable id='blogThisShare'/>
+<b:includable id='bylineByName'/>
+<b:includable id='bylineRegion'/>
+<b:includable id='commentAuthorAvatar'/>
+<b:includable id='commentDeleteIcon'/>
+<b:includable id='commentForm'/>
+<b:includable id='commentFormIframeSrc'/>
+<b:includable id='commentItem'/>
+<b:includable id='commentList'/>
+<b:includable id='commentPicker'/>
+<b:includable id='comments'/>
+<b:includable id='commentsLink'/>
+<b:includable id='commentsLinkIframe'/>
+<b:includable id='commentsTitle'/>
+<b:includable id='defaultAdUnit'/>
+<b:includable id='emailPostIcon'/>
+<b:includable id='facebookShare'/>
+<b:includable id='feedLinks'/>
+<b:includable id='feedLinksBody'/>
+<b:includable id='footerBylines'/>
+<b:includable id='googlePlusShare'/>
+<b:includable id='headerByline'/>
+<b:includable id='homePageLink'/>
+<b:includable id='iframeComments'/>
+<b:includable id='inlineAd'/>
+<b:includable id='linkShare'/>
+<b:includable id='manageComments'/>
+<b:includable id='nextPageLink'/>
+<b:includable id='otherSharingButton'/>
+<b:includable id='platformShare'/>
+<b:includable id='post'/>
+<b:includable id='postAuthor'/>
+<b:includable id='postBody'/>
+<b:includable id='postBodySnippet'/>
+<b:includable id='postCommentsAndAd'/>
+<b:includable id='postCommentsLink'/>
+<b:includable id='postFooter'/>
+<b:includable id='postFooterAuthorProfile'/>
+<b:includable id='postHeader'/>
+<b:includable id='postJumpLink' var='post'/>
+<b:includable id='postLabels'/>
+<b:includable id='postLocation'/>
+<b:includable id='postMeta'/>
+<b:includable id='postMetadataJSONImage'/>
+<b:includable id='postMetadataJSONPublisher'/>
+<b:includable id='postPagination'/>
+<b:includable id='postReactions'/>
+<b:includable id='postShareButtons'/>
+<b:includable id='postTimestamp'/>
+<b:includable id='postTitle'/>
+<b:includable id='previousPageLink'/>
+<b:includable id='sharingButton'/>
+<b:includable id='sharingButtonContent'/>
+<b:includable id='sharingButtons'/>
+<b:includable id='sharingButtonsMenu'/>
+<b:includable id='sharingPlatformIcon'/>
+<b:includable id='threadedCommentForm'/>
+<b:includable id='threadedCommentJs'/>
+<b:includable id='threadedComments'/>
+</b:defaultmarkup>
+<!-- =================================================== -->
+<!-- 4. SIDEBAR & FOOTER WIDGETS                         -->
+<!-- =================================================== -->
+<!-- Label / Kategori -->
+<b:defaultmarkup type='Label'>
+<b:includable id='main'>
+<b:include name='Label'/>
+</b:includable>
+<b:includable id='content'/>
+<b:includable id='cloud'/>
+<b:includable id='list'/>
+</b:defaultmarkup>
+<!-- BlogArchive / Arsip -->
+<b:defaultmarkup type='BlogArchive'>
+<b:includable id='main' var='this'>
+<b:include name='BlogArchive'/>
+</b:includable>
+<b:includable id='content'/>
+<b:includable id='flat'/>
+<b:includable id='hierarchy'/>
+<b:includable id='interval'/>
+<b:includable id='posts'/>
+</b:defaultmarkup>
+<!-- TextList -->
+<b:defaultmarkup type='TextList'>
+<b:includable id='main'>
+<b:include name='TextList'/>
+</b:includable>
+</b:defaultmarkup>
+<!-- Profil Penulis -->
+<b:defaultmarkup type='Profile'>
+<b:includable id='main'>
+<b:include name='Profile'/>
+</b:includable>
+<b:includable id='authorProfileImage'/>
+<b:includable id='content'/>
+<b:includable id='defaultProfileImage'/>
+<b:includable id='profileImage'/>
+<b:includable id='teamProfile'/>
+<b:includable id='teamProfileLink'/>
+<b:includable id='userGoogleProfile'/>
+<b:includable id='userLocation'/>
+<b:includable id='userProfile'/>
+<b:includable id='userProfileData'/>
+<b:includable id='userProfileImage'/>
+<b:includable id='userProfileInfo'/>
+<b:includable id='userProfileLink'/>
+<b:includable id='userProfileText'/>
+<b:includable id='viewProfileLink'/>
+</b:defaultmarkup>
+<!-- Form Kontak -->
+<b:defaultmarkup type='ContactForm'>
+<b:includable id='main'>
+<b:include name='ContactForm'/>
+</b:includable>    
+<b:includable id='content'/>
+</b:defaultmarkup>
+<!-- Widget Gambar -->
+<b:defaultmarkup type='Image'>
+<b:includable id='main'>
+<b:include name='Image'/>
+</b:includable>
+<b:includable id='content'/>
+</b:defaultmarkup>
 </b:defaultmarkups>
   
 <script>
