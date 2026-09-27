@@ -1,6 +1,4 @@
-# ## Hi there 👋 I'm ROYSTHEA
-Halo! Selamat datang di profil GitHub saya. Saya adalah seorang developer yang senang belajar hal baru dan membangun proyek-pr
-Layanan pembuatan teks terpilih. # Hi there 👋 I'm ROYSTHEA
+# Hi there 👋 I'm ROYSTHEA
 Selamat datang di profil GitHub saya! Saya adalah seorang pengembang yang fokus membuat dan mendesain Template Blogger (Blogspot) yang responsif, modern, dan ramah SEO.
 💻 Proyek Template Blogger Saya
 Saat ini saya sedang aktif mengembangkan dan mendistribusikan beberapa tema pilihan:
