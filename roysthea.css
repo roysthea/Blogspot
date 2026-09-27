@@ -1,0 +1,94 @@
+:root {
+  /* --- BOOTSTRAP COMPATIBILITY VARIABLES --- */
+  --bs-body-bg: $(body.background);
+  --bs-body-color: $(body.text.color);
+  --bs-font-sans-serif: $(body.text.family);
+  --bs-primary: $(keycolor);
+
+  /* --- ROYSTHEA CUSTOM ROOT VARIABLES --- */
+  --rd-body: $(body.background.color);
+  --rd-body-bg: $(body.background);
+  --rd-body-color: $(body.text.color);
+  --rd-body-font: $(body.text.font);
+  --rd-font-sans-serif: $(body.text.family);
+  --rd-header-svg: url("$(header)");
+  --rd-header-dasi: url("$(header.dasi)");
+  --rd-header-jass-fill: %23$(fill);
+  --rd-header-jass-stroke: %23$(stroke);
+  --rd-header-jass-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath d='M0,5 C400,60 600,60 1000,5 L1000,100 L0,100 Z' fill='%23$(fill)'/%3E%3Cpath d='M0,5 C400,60 600,60 1000,5' fill='none' stroke='%23$(stroke)' stroke-width='4'/%3E%3C/svg%3E");
+  --rd-primary: $(keycolor);
+  --rd-heading-color: $(posts.title.color);
+  --rd-heading-link: $(posts.title.color);
+  --rd-heading-hover: $(keycolor);
+  --rd-link-color: $(body.link.color);
+  --rd-link-hover: $(body.hover.color);
+  --rd-blockquote: $(posts.text.color);
+  --rd-btn-primary: $(posts.icons.color);
+  --rd-btn-primary-hover: $(labels.background.color);
+  --rd-btn-light-hover: $(posts.title.color);
+  --rd-border-light: $(border.color);
+  --rd-bg-light: #f3f7f9;
+  --rd-archive-bg: #ffffff;
+  --rd-nav-color: $(tabs.color);
+  --rd-nav-hover: $(tabs.hover);
+  --rd-nav-selected: $(tabs.selected.color);
+  --rd-dropdown-bg: $(dropdown.bg);
+  --rd-dropdown-color: $(dropdown.color);
+  --rd-dropdown-hover: $(dropdown.hover);
+  --rd-dropdown-selected: $(dropdown.selected);
+  --rd-header-bg: $(header.bg);
+  --rd-header-color: $(header.color);
+  --rd-header-border: $(header.border);
+  --rd-footer-bg: $(footer.bg);
+  --rd-footer-color: $(footer.color);
+  --rd-footer-link: $(footer.link);
+  --rd-footer-border: $(footer.border);
+  --rd-socket-bg: $(socket.bg);
+  --rd-socket-color: $(socket.color);
+  --rd-popup-bg: #ffffff;
+}
+
+.dark-mode {
+  /* --- BOOTSTRAP OVERRIDE FOR DARK MODE --- */
+  --bs-body-bg: #121212;
+  --bs-body-color: #e0e0e0;
+  --bs-primary: #bb86fc;
+
+  /* --- ROYSTHEA DARK MODE VARIABLES --- */
+  --rd-body: #121212;
+  --rd-body-bg: #121212;
+  --rd-body-color: #e0e0e0;
+  --rd-bg-light: #1e1e1e;
+  --rd-archive-bg: #1a1a1a;
+  --rd-popup-bg: #1a1a1a;
+  --rd-heading-color: #ffffff;
+  --rd-heading-link: #ffffff;
+  --rd-heading-hover: #bb86fc;
+  --rd-link-color: #bb86fc;
+  --rd-link-hover: #ffffff;
+  --rd-blockquote: #b0b0b0;
+  --rd-primary: #bb86fc;
+  --rd-btn-primary: #bb86fc;
+  --rd-btn-primary-hover: #3700b3;
+  --rd-btn-light-hover: #ffffff;
+  --rd-header-bg: #1a1a1a;
+  --rd-header-color: #ffffff;
+  --rd-header-border: #2d2d2d;
+  --rd-nav-color: #e0e0e0;
+  --rd-nav-hover: #bb86fc;
+  --rd-nav-selected: #bb86fc;
+  --rd-dropdown-bg: #242424;
+  --rd-dropdown-color: #ffffff;
+  --rd-dropdown-hover: #333333;
+  --rd-dropdown-selected: #bb86fc;
+  --rd-footer-bg: #1a1a1a;
+  --rd-footer-color: #b0b0b0;
+  --rd-footer-link: #ffffff;
+  --rd-footer-border: #2d2d2d;
+  --rd-socket-bg: #111111;
+  --rd-socket-color: #888888;
+  --rd-border-light: #2d2d2d;
+  --rd-header-jass-fill: %231a1a1a;
+  --rd-header-jass-stroke: %232d2d2d;
+  --rd-header-jass-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath d='M0,5 C400,60 600,60 1000,5 L1000,100 L0,100 Z' fill='%231a1a1a'/%3E%3Cpath d='M0,5 C400,60 600,60 1000,5' fill='none' stroke='%232d2d2d' stroke-width='4'/%3E%3C/svg%3E");
+}
