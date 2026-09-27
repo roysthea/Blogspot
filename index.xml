@@ -482,12 +482,34 @@ Menembus Malam, Menjemput Siang
 <b:includable id='main' var='top'>
 <b:include name='Blog'/>
 </b:includable>
-
 </b:widget>
 </b:section>
-<b:section class='d-none' cond='data:view.isPost' id='ads-post' showaddelement='yes'/>
-<b:section class='pb-4' cond='data:view.isMultipleItems and !data:view.search.query' id='after-blog' showaddelement='yes'/>
+      
+<b:section class='d-none' cond='data:view.isPost' id='ads-post' showaddelement='yes'>
+<b:widget id='HTML6' locked='true' title='#Advertisement' type='HTML' visible='true'>
+<b:widget-settings>
+<b:widget-setting name='content'><![CDATA[<hr class="example-ads"/>]]>
+</b:widget-setting>
+</b:widget-settings>
+<b:includable id='main'>
+<b:include name='Html'/>
+</b:includable>
+</b:widget>
+</b:section> 
+  
+<b:section class='pb-4' cond='data:view.isMultipleItems and !data:view.search.query' id='after-blog' showaddelement='yes'>
+<b:widget id='HTML7' locked='true' title='#Advertisement' type='HTML' version='2' visible='true'>
+<b:widget-settings>
+<b:widget-setting name='content'><![CDATA[<hr class="example-ads"/>]]>
+</b:widget-setting>
+</b:widget-settings>
+<b:includable id='main'>
+<b:include name='Html'/>
+</b:includable>
+</b:widget>
+</b:section>
 </div>
+      
 <div class='col-lg-4 px-3 pb-5 position-relative ms-auto' content='itemid' id='sidebar' itemid='#sidebar' itemscope='itemscope' itemtype='https://schema.org/WPSideBar'>
 <b:section class='pt-4' id='sidebar-static' itemscope='itemscope'/>
 <b:section class='position-sticky py-4 top-0' id='sidebar-sticky' itemscope='itemscope'/>
