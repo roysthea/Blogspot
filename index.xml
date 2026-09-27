@@ -15,12 +15,11 @@ xmlns='http://www.w3.org/1999/xhtml'   xmlns:b='http://www.google.com/2005/gml/b
 <b:attr name='xmlns:data' value='Roysthea'/>
 <head>
 <b:include name='head-content'/>
-
-    <!-- =================================================== -->
-    <!-- BLOGGER SKIN & VARIABLE CONFIGURATION               -->
-    <!-- =================================================== -->
-    <b:if cond='!data:view.isLayoutMode'>
-      <b:skin><![CDATA[
+<!-- =================================================== -->
+<!-- BLOGGER SKIN & VARIABLE CONFIGURATION               -->
+<!-- =================================================== -->
+<b:if cond='!data:view.isLayoutMode'>
+<b:skin><![CDATA[
 /*
 ---------------------------------------------------------
 Name        : ROYSTHEA DIGITAL TEMPLATE
@@ -121,18 +120,14 @@ Description : Lightweight & Responsive Blogger V3 Template
 <Variable name="body.text.font" description="Font" type="font" default="normal normal 14px system-ui,-apple-system,Segoe UI,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji" value="normal normal 14px system-ui,-apple-system,Segoe UI,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji"/>
 <Variable name="posts.background.color" description="Background" type="color" default="transparent" value="rgba(0,0,0,0)"/>
 </Group>
-
-      ]]></b:skin>
-    </b:if>
-
-    <b:if cond='data:view.isLayoutMode'>
-      <b:template-skin><![CDATA[
-        /* CSS khusus untuk tampilan Layout Mode di Admin Blogger */
-        body#layout { max-width: 1140px; margin: 0 auto; }
-      ]]></b:template-skin>
-    </b:if>
-
-  </head>
+]]></b:skin>
+</b:if>
+<b:if cond='data:view.isLayoutMode'>
+<b:template-skin><![CDATA[
+/* CSS khusus untuk tampilan Layout Mode di Admin Blogger */
+body#layout { max-width: 1140px; margin: 0 auto; }
+]]></b:template-skin>
+</b:if>
 <b:defaultmarkups>
 <b:defaultmarkup type='Common'>
 <b:includable id='head-content'>
