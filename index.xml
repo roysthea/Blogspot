@@ -366,13 +366,76 @@ Menembus Malam, Menjemput Siang
 <div class='pt-4 mb-4' id='special-homepage'>
 <div class='container px-3'>
 <b:section cond='data:view.isHomepage' id='special-home' showaddelement='yes'/>
-</div>
-</div>
+<b:widget id='PopularPosts1' locked='true' title='#Popular Weeky' type='PopularPosts' version='2' visible='true'>
+<b:includable id='main'>
+<b:include name='PopularHero'/>
+</b:includable>
+</b:widget>
+
+<b:widget id='HTML2' locked='true' title='#Advertisement' type='HTML' version='2' visible='true'>
+<b:widget-settings>
+<b:widget-setting name='content'>
+</b:widget-setting>
+</b:widget-settings>
+<b:includable id='main'>
+<b:include name='Html'/>
+</b:includable>
+</b:widget>
   
-<div class='container px-3'>
-<b:section class='row gx-2 flex-nowrap overflow-hidden row-cols-2 row-cols-md-3 row-cols-lg-4 drag-scroll full-width rounded-3' id='special-categories' showaddelement='yes'/>
+<b:widget id='HTML3' locked='true' title='#CustomPost by Label' type='HTML' visible='true'>
+<b:widget-settings>
+<b:widget-setting name='content'>
+</b:widget-setting>
+</b:widget-settings>
+<b:includable id='main'>
+<b:include name='Html'/>
+</b:includable>
+</b:widget>
+</b:section>
+
+<b:section class='row gx-2 flex-nowrap overflow-hidden row-cols-2 row-cols-md-3 row-cols-lg-4 drag-scroll full-width rounded-3' id='special-categories' showaddelement='yes'>
+<b:widget id='Image2' locked='false' title='#Tech' type='Image' visible='true'>
+<b:widget-settings>
+</b:widget-settings>
+<b:includable id='main'>
+<b:include name='Image'/>
+</b:includable>
+<b:includable id='content'/>
+</b:widget>
+
+<b:widget id='Image3' locked='false' title='#Smartphone' type='Image' visible='true'>
+<b:includable id='main'>
+<b:include name='JetImage'/>
+</b:includable>
+<b:includable id='content'/>
+</b:widget>
+  
+<b:widget id='Image4' locked='false' title='#Lights' type='Image' visible='true'>
+<b:includable id='main'>
+<b:include name='Image'/>
+</b:includable>
+<b:includable id='content'/>
+</b:widget>
+  
+<b:widget id='Image5' locked='false' title='#Travel' type='Image' visible='true'>
+<b:includable id='main'>
+<b:include name='Image'/>
+</b:includable>
+<b:includable id='content'/>
+</b:widget>
+  
+<b:widget id='Image6' locked='false' title='#Literatur' type='Image' visible='true'>
+<b:includable id='main'>
+<b:include name='Image'/>
+</b:includable>
+<b:includable id='content'/>
+</b:widget>
+  
+</b:section>
 </div>
-</b:if>
+</div>
+</b:if>     
+
   
 <!--Mulai Content-->
 <div id='primary'>
