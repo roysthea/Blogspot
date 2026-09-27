@@ -365,7 +365,7 @@ Menembus Malam, Menjemput Siang
 <b:if cond='data:view.isHomepage'>
 <div class='pt-4 mb-4' id='special-homepage'>
 <div class='container px-3'>
-<b:section cond='data:view.isHomepage' id='special-home' showaddelement='yes'/>
+<b:section cond='data:view.isHomepage' id='special-home' showaddelement='yes'>
 <b:widget id='PopularPosts1' locked='true' title='#Popular Weeky' type='PopularPosts' version='2' visible='true'>
 <b:includable id='main'>
 <b:include name='PopularHero'/>
