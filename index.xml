@@ -308,17 +308,48 @@ body#layout { max-width: 1140px; margin: 0 auto; }
 </b:defaultmarkup>
 </b:defaultmarkups>
 <!-- Your Style and Script before </head> is here -->
-
 <b:if cond='!data:view.isPreview'>&lt;/head&gt;&lt;body class=&quot;d-block <b:include name='BodyClass'/>&quot;&gt;&lt;textarea disabled readonly id=&quot;element-h&quot; style=&quot;display:none&quot;&gt;&lt;style&gt;/*</b:if></head><body><b:if cond='!data:view.isPreview'>*/&lt;/style&gt;&lt;/textarea&gt;</b:if>
 <b:section cond='data:view.isLayoutMode' id='upload-image' showaddelement='yes'/>
 
 <header class='header-navigation' content='itemid' id='header' itemid='#header' itemscope='itemscope' itemtype='https://schema.org/WPHeader'>
-<b:section class='container' id='header-logo' maxwidgets='1' showaddelement='yes'/>
+<b:section class='container' id='header-logo' maxwidgets='1' showaddelement='yes'>
+<b:widget id='HTML1' locked='true' title='ROYSTHEA DIGITAL' type='HTML' version='2' visible='true'>
+<b:widget-settings>
+<b:widget-setting name='content'><![CDATA[<svg width="270" height="67" viewbox="0 0 270 67" xmlns="http://www.w3.org/2000/svg">
+<rect width="270" height="67" fill="none"/>
+<g stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M10 55 H35 L45 40 H25 Z" /> <path d="M30 40 L45 20 L60 35" /> <path d="M60 35 L55 45" /> </path></path></path></g>
+<text x="75" y="35" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="22" fill="#333333">
+ROYSTHEA<tspan fill="#770077">77</tspan>
+</text>
+<text x="75" y="55" font-family="Arial, Helvetica, sans-serif" font-style="italic" font-size="10" fill="#444444">
+Menembus Malam, Menjemput Siang
+</text>
+</rect></svg>]]></b:widget-setting>
+</b:widget-settings>
+<b:includable id='main'>
+<b:include name='Logo'/>
+</b:includable>
+</b:widget>
+</b:section>
 </header>
   
 <div class='header-dasi'>
 <input class='d-none' id='navbar-toggle' type='checkbox'/>
-<b:section class='container position-relative px-3 flex-nowrap' id='header-main' maxwidgets='3' showaddelement='no'/>  
+<b:section class='container position-relative px-3 flex-nowrap' id='header-main' maxwidgets='3' showaddelement='yes'>
+<b:widget id='LinkList1' locked='true' title='Icons, Dark, Search' type='LinkList' version='2' visible='true'>
+<b:includable id='main'>
+<b:include name='Search'/>
+</b:includable>
+<b:includable id='content'/>
+</b:widget>
+<b:widget id='LinkList2' locked='true' title='Menu' type='LinkList' version='2' visible='true'>
+<b:includable id='main'>
+<b:include name='Menu'/>
+</b:includable>
+<b:includable id='content'/>
+</b:widget>
+</b:section>  
 </div>
 <div class='header-jass'/>
 
