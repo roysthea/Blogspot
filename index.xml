@@ -353,6 +353,15 @@ Menembus Malam, Menjemput Siang
 </div>
 <div class='header-jass'/>
 
+<b:section class='position-relative border-bottom jt-border-light' id='extra-menu' maxwidgets='1' showaddelement='yes'>
+<b:widget id='LinkList3' locked='true' title='ExtraMenu' type='LinkList' version='2' visible='true'>
+<b:includable id='main'>
+<b:include name='ExtraMenu'/>
+</b:includable>
+<b:includable id='content'/>
+</b:widget>
+</b:section>
+
 <b:if cond='data:view.isHomepage'>
 <div class='pt-4 mb-4' id='special-homepage'>
 <div class='container px-3'>
