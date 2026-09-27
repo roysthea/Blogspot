@@ -353,7 +353,7 @@ Menembus Malam, Menjemput Siang
 </div>
 <div class='header-jass'/>
 
-<b:section class='position-relative border-bottom jt-border-light' id='extra-menu' maxwidgets='1' showaddelement='yes'>
+<b:section class='position-relative border-bottom rd-border-light' id='extra-menu' maxwidgets='1' showaddelement='yes'>
 <b:widget id='LinkList3' locked='true' title='ExtraMenu' type='LinkList' version='2' visible='true'>
 <b:includable id='main'>
 <b:include name='ExtraMenu'/>
@@ -365,13 +365,12 @@ Menembus Malam, Menjemput Siang
 <b:if cond='data:view.isHomepage'>
 <div class='pt-4 mb-4' id='special-homepage'>
 <div class='container px-3'>
-<b:section cond='data:view.isHomepage' id='special-home' showaddelement='yes'>
+<b:section cond='data:view.isHomepage' id='special-home' maxwidgets='3' showaddelement='yes'>
 <b:widget id='PopularPosts1' locked='true' title='#Popular Weeky' type='PopularPosts' version='2' visible='true'>
 <b:includable id='main'>
 <b:include name='PopularHero'/>
 </b:includable>
 </b:widget>
-
 <b:widget id='HTML2' locked='true' title='#Advertisement' type='HTML' version='2' visible='true'>
 <b:widget-settings>
 <b:widget-setting name='content'>
@@ -381,7 +380,6 @@ Menembus Malam, Menjemput Siang
 <b:include name='Html'/>
 </b:includable>
 </b:widget>
-  
 <b:widget id='HTML3' locked='true' title='#CustomPost by Label' type='HTML' visible='true'>
 <b:widget-settings>
 <b:widget-setting name='content'>
@@ -393,8 +391,8 @@ Menembus Malam, Menjemput Siang
 </b:widget>
 </b:section>
 
-<b:section class='row gx-2 flex-nowrap overflow-hidden row-cols-2 row-cols-md-3 row-cols-lg-4 drag-scroll full-width rounded-3' id='special-categories' showaddelement='yes'>
-<b:widget id='Image2' locked='false' title='#Tech' type='Image' visible='true'>
+<b:section class='row gx-2 flex-nowrap overflow-hidden row-cols-2 row-cols-md-3 row-cols-lg-4 drag-scroll full-width rounded-3' id='special-categories' maxwidgets='6' showaddelement='yes'>
+<b:widget id='Image2' locked='true' title='#Tech' type='Image' visible='true'>
 <b:widget-settings>
 </b:widget-settings>
 <b:includable id='main'>
@@ -403,28 +401,28 @@ Menembus Malam, Menjemput Siang
 <b:includable id='content'/>
 </b:widget>
 
-<b:widget id='Image3' locked='false' title='#Smartphone' type='Image' visible='true'>
+<b:widget id='Image3' locked='true' title='#Smartphone' type='Image' visible='true'>
 <b:includable id='main'>
 <b:include name='JetImage'/>
 </b:includable>
 <b:includable id='content'/>
 </b:widget>
   
-<b:widget id='Image4' locked='false' title='#Lights' type='Image' visible='true'>
+<b:widget id='Image4' locked='true' title='#Lights' type='Image' visible='true'>
 <b:includable id='main'>
 <b:include name='Image'/>
 </b:includable>
 <b:includable id='content'/>
 </b:widget>
   
-<b:widget id='Image5' locked='false' title='#Travel' type='Image' visible='true'>
+<b:widget id='Image5' locked='true' title='#Travel' type='Image' visible='true'>
 <b:includable id='main'>
 <b:include name='Image'/>
 </b:includable>
 <b:includable id='content'/>
 </b:widget>
   
-<b:widget id='Image6' locked='false' title='#Literatur' type='Image' visible='true'>
+<b:widget id='Image6' locked='true' title='#Literatur' type='Image' visible='true'>
 <b:includable id='main'>
 <b:include name='Image'/>
 </b:includable>
@@ -442,7 +440,13 @@ Menembus Malam, Menjemput Siang
 <div class='container px-0'>
 <div class='d-lg-flex' id='main-content'>
 <div class='col-lg-8 px-3' id='main'>
-<b:if cond='data:view.isMultipleItems and !data:view.isError or !data:numPosts == 0'><b:with value='data:view.isHomepage ? &quot;Homepage &quot; + data:blog.title : data:blog.pageName ? data:blog.pageName : &quot;Latest Posts&quot;' var='auto_heading'><h1 class='d-none'><data:auto_heading/></h1></b:with></b:if>
+<b:if cond='data:view.isMultipleItems and !data:view.isError or !data:numPosts == 0'>
+<b:with value='data:view.isHomepage ? &quot;Homepage &quot; + data:blog.title : data:blog.pageName ? data:blog.pageName : &quot;Latest Posts&quot;' var='auto_heading'>
+<h1 class='d-none'>
+<data:auto_heading/>
+</h1>
+</b:with>
+</b:if>
 <b:section class='pt-4' cond='data:view.isMultipleItems and !data:view.search.query' id='before-blog' showaddelement='yes'/>
   
 <b:section class='pt-4' cond='data:view.isPost' id='before-post' showaddelement='yes'/>
