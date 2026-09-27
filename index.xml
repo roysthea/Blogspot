@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:css='false' b:defaultwidgetversion='2' 
-b:js='true' 
-b:layoutsVersion='3' 
-b:render='true' 
-b:responsive='true'  b:templateUrl='https://www.roysthea.blogspot.com' 
-b:templateVersion='0.4' 
-expr:dir='data:blog.languageDirection' 
-expr:lang='data:blog.locale' 
-xmlns='http://www.w3.org/1999/xhtml'   xmlns:b='http://www.google.com/2005/gml/b'    xmlns:data='http://www.google.com/2005/gml/data'    xmlns:expr='http://www.google.com/2005/gml/expr'>
-<b:attr name='xmlns' value='Roysthea'/>
-<b:attr name='xmlns:b' value='Roysthea'/>
-<b:attr name='xmlns:expr' value='Roysthea'/>
-<b:attr name='xmlns:data' value='Roysthea'/>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='roysthea.xml' b:templateVersion='0.0.1' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
 <b:include name='head-content'/>
 <!-- =================================================== -->
