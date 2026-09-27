@@ -4,7 +4,7 @@
 b:defaultwidgetversion='2'
 b:layoutsVersion='3'
 b:responsive='true'
-b:templateUrl='roysthea.xml'
+b:templateUrl='roysthea-skim.xml'
 b:templateVersion='0.0.1'
 expr:dir='data:blog.languageDirection'
 expr:lang='data:blog.locale'
@@ -16,11 +16,198 @@ xmlns:expr='http://www.google.com/2005/gml/expr'>
 <b:include name='head-content'/>
 <b:if cond='!data:view.isLayoutMode'>
 <b:skin><![CDATA[/*
+-------------------------
+#   PENGATURAN ROYSTHEA   #
+-------------------------
+<Group description="ROYSTHEA - VARIABLE">
+<Variable name="tagline" description="Roysthea" type="string" value="Roysthea"/>
+<Variable name="separator" description="Separator" type="string" value=" - "/>
+<Variable name="description" description="Simple My Blogger" type="string" value=""/>
+<Variable name="cover" description="Cover" type="string" value="Cover"/>
+<Variable name="logo" description="Logo" type="string" value="ROYSTHEA DIGITAL"/>
+<Variable name="favicon" description="Favicon" type="string" value="Favicon ico"/>
+<Variable name="analyticId" description="XY4WV3LY4P" type="string" value="XY4WV3LY4P"/>
+<Variable name="caPubAdsense" description="pub-8095215920624768" type="string" value="pub-8095215920624768"/> 
+<Variable name="autoTOC" description="Table of content" type="string" value="true"/>
+<Variable name="positionTOC" description="Position TOC" type="string" value="noscript"/>
+<Variable name="maxLabel" description="Limit Label" type="string" value="3"/>
+<Variable name="firebaseUrl" description="Firebase Url" type="string" value=""/>
+<Variable name="safeAds" description="Safe Adsense" type="string" value="false"/>
+<Variable name="limitAdsClick" description="limit Adsense User Click" type="string" value="3"/>
+<Variable name="safeLinkUrl" description="Safe Link Url" type="string" value="/p/safelink.html"/>
+<Variable name="safeLinkGenerate" description="Generate Url SafeLink" type="string" value=".safelink"/>
+<Variable name="ignoreSafeLink" description="Ignore SafeLink Url" type="string" value=""/>
+-------------------------
+# ROYSTHEA SKIN VARIABEL #
+-------------------------
+<Variable name="body.background.color" description="Background Color" type="color" default="#ededed" value="#ededed"/>
+<Variable name="body.text.color" description="Text Color" type="color" default="#333333" value="#333333"/>
+<Variable name="body.text.font" description="Font Minimalis" type="font" default="normal normal 14px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" value="normal normal 14px system-ui,-apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,Roboto,Helvetica,Arial,sans-serif"/>
 
+<Variable name="header" description="Header Background" type="string" default="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Cdefs%3E%3CradialGradient id='bgGrad' cx='50%25' cy='50%25' r='75%25' fx='30%25' fy='30%25'%3E%3Cstop offset='0%25' stop-color='%23FFD700'/%3E%3Cstop offset='35%25' stop-color='%23FF8C00'/%3E%3Cstop offset='70%25' stop-color='%23E65100'/%3E%3Cstop offset='100%25' stop-color='%238B2500'/%3E%3C/radialGradient%3E%3ClinearGradient id='waveGrad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FFE082' stop-opacity='0.8'/%3E%3Cstop offset='50%25' stop-color='%23FF6F00' stop-opacity='0.6'/%3E%3Cstop offset='100%25' stop-color='%23BF360C' stop-opacity='0.9'/%3E%3C/linearGradient%3E%3ClinearGradient id='waveGrad2' x1='100%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FFB300' stop-opacity='0.7'/%3E%3Cstop offset='60%25' stop-color='%23D84315' stop-opacity='0.8'/%3E%3Cstop offset='100%25' stop-color='%234E0D00' stop-opacity='0.95'/%3E%3C/linearGradient%3E%3CradialGradient id='glow' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='%23FFFFFF' stop-opacity='0.9'/%3E%3Cstop offset='40%25' stop-color='%23FFE082' stop-opacity='0.5'/%3E%3Cstop offset='100%25' stop-color='%23FF6F00' stop-opacity='0'/%3E%3C/radialGradient%3E%3Cfilter id='blurSoft' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeGaussianBlur stdDeviation='15'/%3E%3C/filter%3E%3Cfilter id='blurStrong' x='-50%25' y='-50%25' width='200%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='40'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='1920' height='1080' fill='url(%23bgGrad)'/%3E%3Ccircle cx='450' cy='450' r='350' fill='url(%23glow)' filter='url(%23blurStrong)'/%3E%3Ccircle cx='1100' cy='850' r='250' fill='url(%23glow)' opacity='0.6' filter='url(%23blurStrong)'/%3E%3Cpath d='M 1200 -50 C 1500 200, 1800 100, 1970 450 L 1970 -50 Z' fill='url(%23waveGrad2)' opacity='0.8'/%3E%3Cpath d='M -50 700 C 400 450, 900 300, 1970 150 L 1970 400 C 1200 650, 600 500, -50 900 Z' fill='url(%23waveGrad1)'/%3E%3Cpath d='M -50 950 C 500 650, 1100 800, 1970 400 L 1970 900 C 1300 1100, 500 1100, -50 1150 Z' fill='url(%23waveGrad2)'/%3E%3Cpath d='M -50 1000 C 600 700, 1200 650, 1970 1000 L 1970 1150 L -50 1150 Z' fill='%23FFA000' opacity='0.6' filter='url(%23blurSoft)'/%3E%3Cg fill='%23FFFFFF' opacity='0.25'%3E%3Ccircle cx='200' cy='150' r='60' filter='url(%23blurSoft)'/%3E%3Ccircle cx='100' cy='730' r='80' filter='url(%23blurSoft)'/%3E%3Ccircle cx='700' cy='480' r='45' filter='url(%23blurSoft)' opacity='0.35'/%3E%3Ccircle cx='980' cy='270' r='70' filter='url(%23blurSoft)'/%3E%3Ccircle cx='1040' cy='450' r='60' filter='url(%23blurSoft)'/%3E%3Ccircle cx='1070' cy='580' r='75' filter='url(%23blurSoft)' opacity='0.4'/%3E%3Ccircle cx='1650' cy='250' r='50' filter='url(%23blurSoft)'/%3E%3C/g%3E%3Cg fill='%23FFFFFF'%3E%3Ccircle cx='300' cy='200' r='3' opacity='0.8'/%3E%3Ccircle cx='480' cy='320' r='2' opacity='0.6'/%3E%3Ccircle cx='550' cy='180' r='4' opacity='0.9'/%3E%3Ccircle cx='750' cy='350' r='2.5' opacity='0.7'/%3E%3Ccircle cx='850' cy='600' r='3' opacity='0.8'/%3E%3Ccircle cx='920' cy='780' r='2' opacity='0.5'/%3E%3Ccircle cx='1150' cy='300' r='4' opacity='0.9'/%3E%3Ccircle cx='1380' cy='480' r='3' opacity='0.7'/%3E%3Ccircle cx='1450' cy='220' r='2' opacity='0.6'/%3E%3Ccircle cx='1600' cy='620' r='3.5' opacity='0.8'/%3E%3Ccircle cx='1750' cy='310' r='2' opacity='0.9'/%3E%3Ccircle cx='1320' cy='920' r='3' opacity='0.8'/%3E%3Ccircle cx='980' cy='950' r='4' opacity='0.7'/%3E%3Ccircle cx='680' cy='880' r='2' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E" value="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1920 1080&#39;%3E%3Cdefs%3E%3CradialGradient id=&#39;bgGrad&#39; cx=&#39;50%25&#39; cy=&#39;50%25&#39; r=&#39;75%25&#39; fx=&#39;30%25&#39; fy=&#39;30%25&#39;%3E%3Cstop offset=&#39;0%25&#39; stop-color=&#39;%23FFD700&#39;/%3E%3Cstop offset=&#39;35%25&#39; stop-color=&#39;%23FF8C00&#39;/%3E%3Cstop offset=&#39;70%25&#39; stop-color=&#39;%23E65100&#39;/%3E%3Cstop offset=&#39;100%25&#39; stop-color=&#39;%238B2500&#39;/%3E%3C/radialGradient%3E%3ClinearGradient id=&#39;waveGrad1&#39; x1=&#39;0%25&#39; y1=&#39;0%25&#39; x2=&#39;100%25&#39; y2=&#39;100%25&#39;%3E%3Cstop offset=&#39;0%25&#39; stop-color=&#39;%23FFE082&#39; stop-opacity=&#39;0.8&#39;/%3E%3Cstop offset=&#39;50%25&#39; stop-color=&#39;%23FF6F00&#39; stop-opacity=&#39;0.6&#39;/%3E%3Cstop offset=&#39;100%25&#39; stop-color=&#39;%23BF360C&#39; stop-opacity=&#39;0.9&#39;/%3E%3C/linearGradient%3E%3ClinearGradient id=&#39;waveGrad2&#39; x1=&#39;100%25&#39; y1=&#39;0%25&#39; x2=&#39;0%25&#39; y2=&#39;100%25&#39;%3E%3Cstop offset=&#39;0%25&#39; stop-color=&#39;%23FFB300&#39; stop-opacity=&#39;0.7&#39;/%3E%3Cstop offset=&#39;60%25&#39; stop-color=&#39;%23D84315&#39; stop-opacity=&#39;0.8&#39;/%3E%3Cstop offset=&#39;100%25&#39; stop-color=&#39;%234E0D00&#39; stop-opacity=&#39;0.95&#39;/%3E%3C/linearGradient%3E%3CradialGradient id=&#39;glow&#39; cx=&#39;50%25&#39; cy=&#39;50%25&#39; r=&#39;50%25&#39;%3E%3Cstop offset=&#39;0%25&#39; stop-color=&#39;%23FFFFFF&#39; stop-opacity=&#39;0.9&#39;/%3E%3Cstop offset=&#39;40%25&#39; stop-color=&#39;%23FFE082&#39; stop-opacity=&#39;0.5&#39;/%3E%3Cstop offset=&#39;100%25&#39; stop-color=&#39;%23FF6F00&#39; stop-opacity=&#39;0&#39;/%3E%3C/radialGradient%3E%3Cfilter id=&#39;blurSoft&#39; x=&#39;-20%25&#39; y=&#39;-20%25&#39; width=&#39;140%25&#39; height=&#39;140%25&#39;%3E%3CfeGaussianBlur stdDeviation=&#39;15&#39;/%3E%3C/filter%3E%3Cfilter id=&#39;blurStrong&#39; x=&#39;-50%25&#39; y=&#39;-50%25&#39; width=&#39;200%25&#39; height=&#39;200%25&#39;%3E%3CfeGaussianBlur stdDeviation=&#39;40&#39;/%3E%3C/filter%3E%3C/defs%3E%3Crect width=&#39;1920&#39; height=&#39;1080&#39; fill=&#39;url(%23bgGrad)&#39;/%3E%3Ccircle cx=&#39;450&#39; cy=&#39;450&#39; r=&#39;350&#39; fill=&#39;url(%23glow)&#39; filter=&#39;url(%23blurStrong)&#39;/%3E%3Ccircle cx=&#39;1100&#39; cy=&#39;850&#39; r=&#39;250&#39; fill=&#39;url(%23glow)&#39; opacity=&#39;0.6&#39; filter=&#39;url(%23blurStrong)&#39;/%3E%3Cpath d=&#39;M 1200 -50 C 1500 200, 1800 100, 1970 450 L 1970 -50 Z&#39; fill=&#39;url(%23waveGrad2)&#39; opacity=&#39;0.8&#39;/%3E%3Cpath d=&#39;M -50 700 C 400 450, 900 300, 1970 150 L 1970 400 C 1200 650, 600 500, -50 900 Z&#39; fill=&#39;url(%23waveGrad1)&#39;/%3E%3Cpath d=&#39;M -50 950 C 500 650, 1100 800, 1970 400 L 1970 900 C 1300 1100, 500 1100, -50 1150 Z&#39; fill=&#39;url(%23waveGrad2)&#39;/%3E%3Cpath d=&#39;M -50 1000 C 600 700, 1200 650, 1970 1000 L 1970 1150 L -50 1150 Z&#39; fill=&#39;%23FFA000&#39; opacity=&#39;0.6&#39; filter=&#39;url(%23blurSoft)&#39;/%3E%3Cg fill=&#39;%23FFFFFF&#39; opacity=&#39;0.25&#39;%3E%3Ccircle cx=&#39;200&#39; cy=&#39;150&#39; r=&#39;60&#39; filter=&#39;url(%23blurSoft)&#39;/%3E%3Ccircle cx=&#39;100&#39; cy=&#39;730&#39; r=&#39;80&#39; filter=&#39;url(%23blurSoft)&#39;/%3E%3Ccircle cx=&#39;700&#39; cy=&#39;480&#39; r=&#39;45&#39; filter=&#39;url(%23blurSoft)&#39; opacity=&#39;0.35&#39;/%3E%3Ccircle cx=&#39;980&#39; cy=&#39;270&#39; r=&#39;70&#39; filter=&#39;url(%23blurSoft)&#39;/%3E%3Ccircle cx=&#39;1040&#39; cy=&#39;450&#39; r=&#39;60&#39; filter=&#39;url(%23blurSoft)&#39;/%3E%3Ccircle cx=&#39;1070&#39; cy=&#39;580&#39; r=&#39;75&#39; filter=&#39;url(%23blurSoft)&#39; opacity=&#39;0.4&#39;/%3E%3Ccircle cx=&#39;1650&#39; cy=&#39;250&#39; r=&#39;50&#39; filter=&#39;url(%23blurSoft)&#39;/%3E%3C/g%3E%3Cg fill=&#39;%23FFFFFF&#39;%3E%3Ccircle cx=&#39;300&#39; cy=&#39;200&#39; r=&#39;3&#39; opacity=&#39;0.8&#39;/%3E%3Ccircle cx=&#39;480&#39; cy=&#39;320&#39; r=&#39;2&#39; opacity=&#39;0.6&#39;/%3E%3Ccircle cx=&#39;550&#39; cy=&#39;180&#39; r=&#39;4&#39; opacity=&#39;0.9&#39;/%3E%3Ccircle cx=&#39;750&#39; cy=&#39;350&#39; r=&#39;2.5&#39; opacity=&#39;0.7&#39;/%3E%3Ccircle cx=&#39;850&#39; cy=&#39;600&#39; r=&#39;3&#39; opacity=&#39;0.8&#39;/%3E%3Ccircle cx=&#39;920&#39; cy=&#39;780&#39; r=&#39;2&#39; opacity=&#39;0.5&#39;/%3E%3Ccircle cx=&#39;1150&#39; cy=&#39;300&#39; r=&#39;4&#39; opacity=&#39;0.9&#39;/%3E%3Ccircle cx=&#39;1380&#39; cy=&#39;480&#39; r=&#39;3&#39; opacity=&#39;0.7&#39;/%3E%3Ccircle cx=&#39;1450&#39; cy=&#39;220&#39; r=&#39;2&#39; opacity=&#39;0.6&#39;/%3E%3Ccircle cx=&#39;1600&#39; cy=&#39;620&#39; r=&#39;3.5&#39; opacity=&#39;0.8&#39;/%3E%3Ccircle cx=&#39;1750&#39; cy=&#39;310&#39; r=&#39;2&#39; opacity=&#39;0.9&#39;/%3E%3Ccircle cx=&#39;1320&#39; cy=&#39;920&#39; r=&#39;3&#39; opacity=&#39;0.8&#39;/%3E%3Ccircle cx=&#39;980&#39; cy=&#39;950&#39; r=&#39;4&#39; opacity=&#39;0.7&#39;/%3E%3Ccircle cx=&#39;680&#39; cy=&#39;880&#39; r=&#39;2&#39; opacity=&#39;0.6&#39;/%3E%3C/g%3E%3C/svg%3E"/>
+<Variable name="header.dasi" description="Gambar Tekstur Dasi" type="string" default="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='52' viewBox='0 0 60 52'%3E%3Crect width='60' height='52' fill='%232A0845'/%3E%3Cpath d='M30 0 L55 15 L55 45 L30 60 L5 45 L5 15 Z' fill='none' stroke='%23C77DFF' stroke-width='2' opacity='0.4'/%3E%3Cpath d='M0 -26 L25 -11 L25 19 L0 34 L-25 19 L-25 -11 Z' fill='none' stroke='%23C77DFF' stroke-width='2' opacity='0.4'/%3E%3Cpath d='M60 -26 L85 -11 L85 19 L60 34 L35 19 L35 -11 Z' fill='none' stroke='%23C77DFF' stroke-width='2' opacity='0.4'/%3E%3Cpolygon points='30,12 45,21 45,39 30,48 15,39 15,21' fill='%239D4EDD' opacity='0.25'/%3E%3C/svg%3E" value="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;60&#39; height=&#39;52&#39; viewBox=&#39;0 0 60 52&#39;%3E%3Crect width=&#39;60&#39; height=&#39;52&#39; fill=&#39;%232A0845&#39;/%3E%3Cpath d=&#39;M30 0 L55 15 L55 45 L30 60 L5 45 L5 15 Z&#39; fill=&#39;none&#39; stroke=&#39;%23C77DFF&#39; stroke-width=&#39;2&#39; opacity=&#39;0.4&#39;/%3E%3Cpath d=&#39;M0 -26 L25 -11 L25 19 L0 34 L-25 19 L-25 -11 Z&#39; fill=&#39;none&#39; stroke=&#39;%23C77DFF&#39; stroke-width=&#39;2&#39; opacity=&#39;0.4&#39;/%3E%3Cpath d=&#39;M60 -26 L85 -11 L85 19 L60 34 L35 19 L35 -11 Z&#39; fill=&#39;none&#39; stroke=&#39;%23C77DFF&#39; stroke-width=&#39;2&#39; opacity=&#39;0.4&#39;/%3E%3Cpolygon points=&#39;30,12 45,21 45,39 30,48 15,39 15,21&#39; fill=&#39;%239D4EDD&#39; opacity=&#39;0.25&#39;/%3E%3C/svg%3E"/>
+<Variable name="fill" description="Warna Isi Jass" type="string" default="ededed" value="ededed"/>
+<Variable name="stroke" description="Warna Garis Jass" type="string" default="ffffff" value="ffffff"/>
+</Group>
+<Group description="Main Color">
+<Variable name="keycolor" description="Main Color" type="color" default="#f67938" value="#f67938"/>
+<Variable name="body.background" description="Body Background Color" type="color" default="#ffffff" value="#ffffff"/>
+
+<Variable name="posts.title.color" description="Heading Color" type="color" default="#343a40" value="#000000"/>
+<Variable name="body.link.color" description="Link Color" type="color" default="$(keycolor)" value="#f67938"/>
+<Variable name="body.hover.color" description="Link Hover" type="color" default="#f46013" value="#f46013"/>
+<Variable name="border.color" description="Border Color" type="color" default="#efefef" value="#efefef"/>
+<Variable name="posts.text.color" description="Blockquote Border Color" type="color" default="$(keycolor)" value="#f67938"/>
+</Group>
+
+<Group description="Typography">
+<Variable name="body.text" description="Body Font" type="font" default="normal normal 16px system-ui,-apple-system,Segoe UI,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji" value="normal normal 16px system-ui,-apple-system,Segoe UI,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji"/>
+<Variable name="posts.title" description="Heading Font" type="font" default="normal bold 40px var(--bs-font-sans-serif)" value="normal bold 40px var(--bs-font-sans-serif)"/>
+<Variable name="title.h2" description="H2 Size" type="length" default="26px" min="12px" max="50px" value="26px"/>
+<Variable name="title.h3" description="H3 Size" type="length" default="22px" min="12px" max="50px" value="22px"/>
+<Variable name="title.h4" description="H4 Size" type="length" default="20px" min="12px" max="50px" value="20px"/>
+<Variable name="title.h5" description="H5 Size" type="length" default="18px" min="12px" max="50px" value="18px"/>
+<Variable name="title.h6" description="H6 Size" type="length" default="16px" min="12px" max="50px" value="16px"/>
+</Group>
+<Group description="Logo">
+<Variable name="logo.width" description="Logo Max Width" type="length" default="200px" min="50px" max="500px" value="200px"/>
+<Variable name="logo.width.mobile" description="Logo Max Width (mobile)" type="length" default="150px" min="50px" max="500px" value="150px"/>
+</Group>
+
+<Group description="Header Color">
+<Variable name="header.bg" description="Background" type="color" default="#ffffff" value="#ffffff"/>
+<Variable name="header.color" description="Font Color " type="color" default="#686868" value="#686868"/>
+<Variable name="header.border" description="Border Color" type="color" default="#efefef" value="#efefef"/>
+</Group>
+
+<Group description="Menu">
+<Variable name="tabs.font" description="Menu Font" type="font" default="normal bold 16px var(--bs-font-sans-serif)" value="normal bold 16px var(--bs-font-sans-serif)"/>
+<Variable name="tabs.color" description="Font Color" type="color" default="$(body.text.color)" value="#686868"/>
+<Variable name="tabs.hover" description="Font Hover" type="color" default="$(keycolor)" value="#f67938"/>
+<Variable name="tabs.selected.color" description="Font Selected" type="color" default="$(keycolor)" value="#f67938"/>
+</Group>
+
+<Group description="Dropdown Menu">
+<Variable name="dropdown.font" description="Font Size" type="length" default="16px" min="12px" max="50px" value="15px"/>
+<Variable name="dropdown.bg" description="Background Color" type="color" default="$(body.text.color)" value="#ffffff"/>
+<Variable name="dropdown.color" description="Font Color" type="color" default="$(keycolor)" value="#686868"/>
+<Variable name="dropdown.hover" description="Font Hover" type="color" default="$(keycolor)" value="#f67938"/>
+<Variable name="dropdown.selected" description="Dropdown Selected Color" type="color" default="$(keycolor)" value="#f67938"/>
+</Group>
+<Group description="Footer Color">
+<Variable name="footer.bg" description="Background Color" type="color" default="#212529" value="#212529"/>
+<Variable name="footer.color" description="Font Color" type="color" default="#9fa6ad" value="#9fa6ad"/>
+<Variable name="footer.link" description="Link Color" type="color" default="#9fa6ad" value="#9fa6ad"/>
+<Variable name="footer.border" description="Border Color" type="color" default="#323539" value="#323539"/>
+</Group>
+
+<Group description="Socket Color">
+<Variable name="socket.bg" description="Background Color" type="color" default="#09080c" value="#09080c"/>
+<Variable name="socket.color" description="Font Color" type="color" default="#9fa6ad" value="#9fa6ad"/>
+</Group>
+
+<Group description="Button">
+<Variable name="posts.icons.color" description="Button Color" type="color" default="$(keycolor)" value="#f67938"/>
+<Variable name="labels.background.color" description="Button Hover"  type="color"  default="#f46013" value="#f46013"/>
+</Group>
+
+<Group description="Comment Form">
+<Variable name="posts.background.color" description="Background" type="color" default="transparent" value="rgba(0,0,0,0)"/>
+</Group>*/
+
+/*
+-----------------------------------------------
+ROYSTHEA DIGITAL Blogger Template
+Name		: ROYSTHEA DIGITAL
+Version		: 0.1
+Designer	: Sobri
+Provider    : ALLAH
+-----------------------------------------------
+*/
+:root {
+--rd-body: $(body.background.color);
+--rd-body-color: $(body.text.color);
+--rd-body-font: $(body.text.font);
+--rd-header-svg: url("$(header)");
+--rd-header-dasi: url("$(header.dasi)");
+--rd-header-jass-fill: %23$(fill);
+--rd-header-jass-stroke: %23$(stroke);
+--rd-header-jass-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath d='M0,5 C400,60 600,60 1000,5 L1000,100 L0,100 Z' fill='%23$(fill)'/%3E%3Cpath d='M0,5 C400,60 600,60 1000,5' fill='none' stroke='%23$(stroke)' stroke-width='4'/%3E%3C/svg%3E");
+--rd-font-sans-serif:$(body.text.family);
+--rd-body-bg:$(body.background);
+--rd-body-color:$(body.text.color);
+--rd-primary:$(keycolor);
+--rd-heading-color:$(posts.title.color);
+--rd-heading-link:$(posts.title.color);
+--rd-heading-hover:$(keycolor);
+--rd-link-color:$(body.link.color);
+--rd-link-hover:$(body.hover.color);
+--rd-blockquote:$(posts.text.color);
+--rd-btn-primary:$(posts.icons.color);
+--rd-btn-primary-hover:$(labels.background.color);
+--rd-btn-light-hover:$(posts.title.color);
+--rd-border-light:$(border.color);
+--rd-bg-light:#f3f7f9;
+--rd-archive-bg:#fff;
+--rd-nav-color:$(tabs.color);
+--rd-nav-hover:$(tabs.hover);
+--rd-nav-selected:$(tabs.selected.color);
+--rd-dropdown-bg:$(dropdown.bg);
+--rd-dropdown-color:$(dropdown.color);
+--rd-dropdown-hover:$(dropdown.hover);
+--rd-dropdown-selected:$(dropdown.selected);
+--rd-header-bg:$(header.bg);
+--rd-header-color:$(header.color);
+--rd-header-border:$(header.border);
+--rd-footer-bg:$(footer.bg);
+--rd-footer-color:$(footer.color);
+--rd-footer-link:$(footer.link);
+--rd-footer-border:$(footer.border);
+--rd-socket-bg:$(socket.bg);
+--rd-socket-color:$(socket.color);
+--rd-popup-bg:#fff;
+}
+.dark-mode {
+--rd-body: #121212;
+--rd-body-bg: #121212;
+--rd-bg-light: #1e1e1e;
+--rd-archive-bg: #1a1a1a;
+--rd-popup-bg: #1a1a1a;
+--rd-body-color: #e0e0e0;
+--rd-heading-color: #ffffff;
+--rd-heading-link: #ffffff;
+--rd-blockquote: #b0b0b0;
+--rd-header-bg: #1a1a1a;
+--rd-header-color: #ffffff;
+--rd-nav-color: #e0e0e0;
+--rd-nav-hover: #bb86fc;
+--rd-nav-selected: #bb86fc;
+--rd-dropdown-bg: #242424;
+--rd-dropdown-color: #ffffff;
+--rd-dropdown-hover: #333333;
+--rd-dropdown-selected: #bb86fc;
+--rd-footer-bg: #1a1a1a;
+--rd-footer-color: #b0b0b0;
+--rd-footer-link: #ffffff;
+--rd-socket-bg: #111111;
+--rd-socket-color: #888888;
+--rd-border-light: #2d2d2d;
+--rd-header-border: #2d2d2d;
+--rd-footer-border: #2d2d2d;
+--rd-btn-primary: #bb86fc;
+--rd-btn-primary-hover: #3700b3;
+--rd-btn-light-hover: #ffffff;
+--rd-primary: #bb86fc;
+--rd-heading-hover: #bb86fc;
+--rd-link-color: #bb86fc;
+--rd-link-hover: #ffffff;
+--rd-header-jass-fill: %231a1a1a;
+--rd-header-jass-stroke: %232d2d2d;
+--rd-header-jass-bg: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath d='M0,5 C400,60 600,60 1000,5 L1000,100 L0,100 Z' fill='%231a1a1a'/%3E%3Cpath d='M0,5 C400,60 600,60 1000,5' fill='none' stroke='%232d2d2d' stroke-width='4'/%3E%3C/svg%3E");
+}
 ]]></b:skin>
-</b:if>
-<b:if cond='!data:view.isLayoutMode'>
-<link href='https://cdn.jsdelivr.net/gh/roysthea/ROYSTHEA@main/roysthea.css' rel='stylesheet' type='text/css'/>
+<!-- PANGGILAN FILE CSS UTAMA ROYSTHEA DARI GITHUB -->
+<link href='https://cdn.jsdelivr.net/gh/roysthea/ROYSTHEA@main/roysthea-skin.css' rel='stylesheet' type='text/css'/>
 </b:if>
 <b:if cond='data:view.isLayoutMode'>
 <b:template-skin><![CDATA[
