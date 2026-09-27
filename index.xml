@@ -109,6 +109,9 @@ Description : Lightweight & Responsive Blogger V3 Template
 </Group>
 ]]></b:skin>
 </b:if>
+<b:if cond='!data:view.isLayoutMode'>
+<link href='https://cdn.jsdelivr.net/gh/roysthea/ROYSTHEA@main/roysthea.css' rel='stylesheet' type='text/css'/>
+</b:if>
 <b:if cond='data:view.isLayoutMode'>
 <b:template-skin><![CDATA[
 /* CSS khusus untuk tampilan Layout Mode di Admin Blogger */
