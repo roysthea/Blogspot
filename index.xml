@@ -458,7 +458,7 @@ Menembus Malam, Menjemput Siang
 </b:includable>
 </b:widget>
   
-<b:widget cond='data:view.isHomepage or data:view.url.canonical == data:blog.canonicalHomepageUrl path &quot;/search?max-results=10&quot;' id='FeaturedPost1' locked='false' title='Featured Post' type='FeaturedPost' visible='true'>
+<b:widget cond='data:view.isHomepage or data:view.url.canonical == data:blog.canonicalHomepageUrl path &quot;/search?max-results=10&quot;' id='FeaturedPost1' locked='true' title='Featured Post' type='FeaturedPost' visible='true'>
 <b:includable id='main' var='this'>
 <b:include name='FeaturedPost'/>
 </b:includable>
@@ -466,7 +466,17 @@ Menembus Malam, Menjemput Siang
 </b:section>
       
 <b:section class='pt-4' cond='data:view.isPost' id='before-post' showaddelement='yes'/>
-  
+<b:widget id='HTML5' locked='true' title='#Advertisement' type='HTML' version='2' visible='true'>
+<b:widget-settings>
+<b:widget-setting name='content'><![CDATA[<hr class="example-ads"/>]]>
+</b:widget-setting>
+</b:widget-settings>
+<b:includable id='main'>
+<b:include name='Html'/>
+</b:includable>
+</b:widget>
+</b:section>
+      
 <b:section class='pt-4 pb-5' id='blog-post' maxwidgets='1' showaddelement='yes'>
 <b:widget id='Blog1' locked='true' title='Postingan Blog' type='Blog' version='2' visible='true'>
 <b:includable id='main' var='top'>
