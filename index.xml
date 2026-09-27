@@ -205,6 +205,17 @@ Provider    : ALLAH
 --rd-header-jass-stroke: %232d2d2d;
 --rd-header-jass-bg: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath d='M0,5 C400,60 600,60 1000,5 L1000,100 L0,100 Z' fill='%231a1a1a'/%3E%3Cpath d='M0,5 C400,60 600,60 1000,5' fill='none' stroke='%232d2d2d' stroke-width='4'/%3E%3C/svg%3E");
 }
+#header-main, 
+.header-navigation, 
+#LinkList1 {
+display: flex !important;
+flex-wrap: wrap !important;
+justify-content: center !important;
+width: 100% !important;
+margin: 5px 0 !important;
+color: #ffffff !important;
+fill: currentColor !important;
+}
 ]]></b:skin>
 <!-- PANGGILAN FILE CSS UTAMA ROYSTHEA DARI GITHUB -->
 <link href='https://cdn.jsdelivr.net/gh/roysthea/ROYSTHEA@main/roysthea-skin.css' rel='stylesheet' type='text/css'/>
