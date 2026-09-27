@@ -465,7 +465,7 @@ Menembus Malam, Menjemput Siang
 </b:widget>
 </b:section>
       
-<b:section class='pt-4' cond='data:view.isPost' id='before-post' showaddelement='yes'/>
+<b:section class='pt-4' cond='data:view.isPost' id='before-post' showaddelement='yes'>
 <b:widget id='HTML5' locked='true' title='#Advertisement' type='HTML' version='2' visible='true'>
 <b:widget-settings>
 <b:widget-setting name='content'><![CDATA[<hr class="example-ads"/>]]>
