@@ -447,8 +447,24 @@ Menembus Malam, Menjemput Siang
 </h1>
 </b:with>
 </b:if>
-<b:section class='pt-4' cond='data:view.isMultipleItems and !data:view.search.query' id='before-blog' showaddelement='yes'/>
+<b:section class='pt-4' cond='data:view.isMultipleItems and !data:view.search.query' id='before-blog' showaddelement='yes'>
+<b:widget id='HTML4' locked='true' title='#Advertisement' type='HTML' visible='true'>
+<b:widget-settings>
+<b:widget-setting name='content'>
+</b:widget-setting>
+</b:widget-settings>
+<b:includable id='main'>
+<b:include name='Html'/>
+</b:includable>
+</b:widget>
   
+<b:widget cond='data:view.isHomepage or data:view.url.canonical == data:blog.canonicalHomepageUrl path &quot;/search?max-results=10&quot;' id='FeaturedPost1' locked='false' title='Featured Post' type='FeaturedPost' visible='true'>
+<b:includable id='main' var='this'>
+<b:include name='FeaturedPost'/>
+</b:includable>
+</b:widget>
+</b:section>
+      
 <b:section class='pt-4' cond='data:view.isPost' id='before-post' showaddelement='yes'/>
   
 <b:section class='pt-4 pb-5' id='blog-post' maxwidgets='1' showaddelement='yes'>
