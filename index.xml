@@ -4,7 +4,7 @@
 b:defaultwidgetversion='2'
 b:layoutsVersion='3'
 b:responsive='true'
-b:templateUrl='roysthea-skim.xml'
+b:templateUrl='roysthea-skin.xml'
 b:templateVersion='0.0.1'
 expr:dir='data:blog.languageDirection'
 expr:lang='data:blog.locale'
