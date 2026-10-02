@@ -182,14 +182,6 @@ transform:translateY(-100%);
 box-shadow:none!important
 }
 #header{
-background-color:var(--rd-header-bg);
-color:var(--rd-header-color);
-transition-property:transform;
-transition-timing-function:cubic-bezier(.4,0,.2,1);
-transition-duration:.3s;
-min-height:50px;
-border-bottom:1px solid var(--rd-header-border);
-z-index:9999
 }
 .header-social{
 border-right:1px solid var(--rd-header-border)
