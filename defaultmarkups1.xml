@@ -1,0 +1,82 @@
+<b:defaultmarkups>
+<b:defaultmarkup type='Common'>
+<b:includable id='All-head-content'>
+<script>/*<![CDATA[*/function rmurl(e,t){var r=new RegExp(/\?m=0|&m=0|\?m=1|&m=1/g);return r.test(e)&&(e=e.replace(r,""),t&&window.history.replaceState({},document.title,e)),e}const currentUrl=rmurl(location.toString(),!0);null!==localStorage&&"dark"==localStorage.getItem("theme")&&(document.querySelector("html").className="dark-mode");/*]]>*/</script>
+<meta expr:content='&quot;text/html; charset=&quot; + data:blog.encoding' http-equiv='Content-Type'/>
+<meta content='width=device-width,initial-scale=1' name='viewport'/>
+
+<!-- Primary Meta Tags -->
+<link expr:href='data:view.url.canonical' rel='canonical'/>
+<meta expr:content='data:view.url.canonical' property='og:url'/>
+<meta expr:content='data:blog.title + &quot; Team&quot;' name='author'/>
+<meta expr:content='data:blog.title' name='application-name'/>
+<meta expr:content='data:blog.adultContent ? &quot;adult&quot; : &quot;general&quot;' name='rating'/>
+      
+<!-- Favicon -->
+<b:if cond='data:skin.vars.favicon'>
+<b:with value='data:skin.vars.favicon' var='favicon'>
+<link expr:href='resizeImage(data:favicon,32,&quot;1:1&quot;)' rel='icon' sizes='32x32' type='image/png'/>
+<link expr:href='resizeImage(data:favicon,96,&quot;1:1&quot;)' rel='icon' sizes='96x96' type='image/png'/>
+<link expr:href='resizeImage(data:favicon,144,&quot;1:1&quot;)' rel='icon' sizes='144x144' type='image/png'/>
+<link expr:href='resizeImage(data:favicon,180,&quot;1:1&quot;)' rel='apple-touch-icon' type='image/png'/>
+<link expr:href='resizeImage(data:favicon,152,&quot;1:1&quot;)' rel='apple-touch-icon-precomposed' type='image/png'/>
+<meta expr:content='resizeImage(data:favicon,150,&quot;1:1&quot;)' name='msapplication-TileImage'/>
+</b:with>
+<b:else/>
+<link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+</b:if>
+
+<!-- Theme Color -->
+<meta expr:content='data:skin.vars.body_background' name='theme-color'/>
+<meta expr:content='data:skin.vars.body_background' name='msapplication-TileColor'/>
+<meta expr:content='data:skin.vars.body_background' name='msapplication-navbutton-color'/>
+<meta expr:content='data:skin.vars.body_background' name='apple-mobile-web-app-status-bar-style'/>
+<meta content='yes' name='apple-mobile-web-app-capable'/>
+
+<!-- Title -->
+<b:with value='data:view.isHomepage ? data:blog.title + (data:skin.vars.tagline ? data:skin.vars.separator + data:skin.vars.tagline : &quot;&quot;) : data:view.isError ? &quot;404 (Error) Not Found&quot; + data:skin.vars.separator + data:blog.title : data:blog.pageName ? data:blog.pageName + data:skin.vars.separator + data:blog.title :  &quot;Latest Posts&quot; + data:skin.vars.separator + data:blog.title' var='meta_title'>
+<title><data:meta_title/></title>
+<meta expr:content='data:meta_title' name='title'/>
+<meta expr:content='data:meta_title' property='og:title'/>
+<meta expr:content='data:meta_title' name='twitter:title'/>
+</b:with>
+
+<!-- Image -->
+<b:with value='data:view.featuredImage ?: data:skin.vars.cover' var='meta_image'>
+<meta expr:content='data:meta_image' property='og:image'/>
+<meta expr:content='data:meta_image' name='twitter:image'/>
+</b:with>
+
+<!-- Description -->
+<b:with value='data:view.description ?: data:skin.vars.description' var='meta_desc'>
+<meta expr:content='data:meta_desc' name='description'/>
+<meta expr:content='data:meta_desc' property='og:description'/>
+<meta expr:content='data:meta_desc' name='twitter:description'/>
+</b:with>
+
+<!-- Open Graph / Facebook -->
+<meta content='' property='fb:app_id'/>
+<meta content='' property='article:author'/>
+<meta content='website' property='og:type'/>
+<meta expr:content='data:blog.locale' property='og:locale'/>
+<meta expr:content='data:blog.title' property='og:site_name'/>
+<meta expr:content='data:view.url.canonical' property='og:url'/>
+<meta expr:content='data:view.title' property='og:image:alt'/>
+
+<!-- Twitter -->
+<meta content='' name='twitter:site'/>
+<meta content='' name='twitter:creator'/>
+<meta content='summary_large_image' name='twitter:card'/>
+<meta expr:content='data:view.url.canonical' name='twitter:url'/>
+<meta expr:content='data:view.title' name='twitter:image:alt'/>
+
+<!-- Feed -->
+<data:blog.feedLinks/>
+
+<b:if cond='data:view.isHomepage'>
+<script type='application/ld+json'>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;WebSite&quot;,&quot;url&quot;:&quot;<data:blog.canonicalHomepageUrl/>&quot;,&quot;name&quot;:&quot;<data:blog.title/>&quot;,&quot;potentialAction&quot;:{&quot;@type&quot;:&quot;SearchAction&quot;,&quot;target&quot;:&quot;<data:blog.canonicalHomepageUrl/>search?q={search_term_string}&amp;max-results=10&quot;,&quot;query-input&quot;:&quot;required name=search_term_string&quot;}}</script>
+</b:if>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' media='print' onload='if(media!=&quot;all&quot;)media=&quot;all&quot;' rel='stylesheet'/><script src='https://cdn.jsdelivr.net/gh/fontawesome-icon/icon@main/new.js'/><noscript><link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'/></noscript><script src='https://cdn.jsdelivr.net/gh/fontawesome-icon/icon@main/new.js'/>
+</b:includable>
+</b:defaultmarkup>
+</b:defaultmarkups>
